@@ -1,0 +1,34 @@
+{
+  "Socials": [
+    {
+      "service": "Twitter",
+      "url": "/",
+      "icon": "fa6-brands:twitter",
+      "active": true
+    },
+    {
+      "service": "Facebook",
+      "url": "/",
+      "icon": "fa6-brands:facebook-f",
+      "active": true
+    },
+    {
+      "service": "LinkedIn",
+      "url": "/",
+      "icon": "fa6-brands:linkedin-in",
+      "active": true
+    },
+    {
+      "service": "Instagram",
+      "url": "/",
+      "icon": "fa6-brands:instagram",
+      "active": true
+    },
+    {
+      "service": "Email",
+      "url": "/",
+      "icon": "fa6-regular:envelope",
+      "active": true
+    }
+  ]
+}
