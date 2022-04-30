@@ -1,6 +1,4 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
-
 import SocialLinks from '../SocialLinks'
 import Copyright from '../Copyright'
 
