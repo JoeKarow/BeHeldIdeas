@@ -4,13 +4,13 @@ import {
   mdEditor,
   objectField,
   relationSelection,
-  stringField,
-} from '../../fields';
-import { collectionDefaults } from '../../patterns';
+  stringField
+} from '../../fields'
+import { collectionDefaults } from '../../patterns'
 // import { siteMetadata } from '../../../../data/settings.json';
-import * as settingsJSON from '../../../../data/settings.json';
+import * as settingsJSON from '../../../../data/settings/settings.json'
 
-const { author } = settingsJSON.siteMetadata;
+const { author } = settingsJSON.siteMetadata
 
 export default {
   ...collectionDefaults('Blog', 'blog'),
@@ -23,7 +23,7 @@ export default {
     stringField('Post Title', 'title', true),
     objectField('Cover Image', 'coverImage', [
       imageField('Cover Image', 'image', false, true),
-      stringField('Alt Text', 'image-alt', true),
+      stringField('Alt Text', 'image-alt', true)
     ]),
     stringField('Short Description', 'description', true),
     stringField('Author', 'author', true, author),
@@ -36,6 +36,6 @@ export default {
       'tagname',
       true
     ),
-    mdEditor('Body', 'body', false),
-  ],
-};
+    mdEditor('Body', 'body', false)
+  ]
+}
