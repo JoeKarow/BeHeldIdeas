@@ -9,13 +9,15 @@ export const stringField = (
   label = 'String',
   name = 'string',
   required = false,
-  defaultVal = ''
+  defaultVal = '',
+  hint = ''
 ) => ({
   label,
   name,
   widget: 'string',
   required,
-  default: defaultVal
+  default: defaultVal,
+  hint
 })
 
 export const objectField = (

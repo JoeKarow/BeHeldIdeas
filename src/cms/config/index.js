@@ -1,6 +1,6 @@
-import blogCollection from '@/cms/collections/blog'
-import pageContentCollection from '@/cms/collections/pageContent'
-import siteSettingsCollection from '@/cms/collections/siteSettings'
+import blogCollection from './collections/blog'
+import pageContentCollection from './collections/pageContent'
+import siteSettingsCollection from './collections/siteSettings'
 
 const config = {
   backend: {

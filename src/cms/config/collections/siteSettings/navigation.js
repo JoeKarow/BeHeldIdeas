@@ -1,14 +1,18 @@
 import { listObject, stringField } from '../../fields'
 
 const navigation = {
-  label: 'Navigation',
+  label: 'Navbar Items',
   name: 'items',
   file: 'src/data/navigation/navigation.json',
   fields: [
-    listObject('Nav Items', 'navigation', [
-      stringField('Title', 'text'),
-      stringField('URL', 'url')
-    ])
+    listObject(
+      'Navbar Items',
+      'items',
+      [stringField('Title', 'text', true), stringField('URL', 'url', true)],
+      true,
+      true,
+      false
+    )
   ]
 }
 

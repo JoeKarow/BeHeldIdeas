@@ -8,9 +8,9 @@ import {
 } from '../../fields'
 import { collectionDefaults } from '../../patterns'
 // import { siteMetadata } from '../../../../data/settings.json';
-import * as settingsJSON from '../../../../data/settings/settings.json'
+import siteMetadata from '../../../../data/settings/settings.json'
 
-const { author } = settingsJSON.siteMetadata
+const { author } = siteMetadata
 
 const blogCollection = {
   ...collectionDefaults('Blog', 'blog'),
