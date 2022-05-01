@@ -2,8 +2,8 @@ export const textField = (label = 'Text', name = 'text', required = false) => ({
   label,
   name,
   widget: 'text',
-  required,
-});
+  required
+})
 
 export const stringField = (
   label = 'String',
@@ -15,8 +15,8 @@ export const stringField = (
   name,
   widget: 'string',
   required,
-  default: defaultVal,
-});
+  default: defaultVal
+})
 
 export const objectField = (
   label = 'Object',
@@ -28,8 +28,8 @@ export const objectField = (
   name,
   widget: 'object',
   fields,
-  required,
-});
+  required
+})
 
 export const imageField = (
   label = 'image',
@@ -41,15 +41,15 @@ export const imageField = (
   name,
   widget: 'image',
   choose_url,
-  required,
-});
+  required
+})
 
 export const dateField = (label = 'date', name = 'date', required = true) => ({
   label,
   name,
   widget: 'datetime',
-  required,
-});
+  required
+})
 
 const mdButtons = [
   'bold',
@@ -64,8 +64,8 @@ const mdButtons = [
   'heading-six',
   'quote',
   'bulleted-list',
-  'numbered-list',
-];
+  'numbered-list'
+]
 
 export const mdEditor = (
   label = 'body',
@@ -77,10 +77,10 @@ export const mdEditor = (
   name,
   buttons: h1Allowed
     ? mdButtons
-    : mdButtons.filter((opt) => opt !== 'heading-one'),
+    : mdButtons.filter(opt => opt !== 'heading-one'),
   editor_components,
-  required: true,
-});
+  required: true
+})
 
 export const relationSelection = (
   label = 'relation',
@@ -98,8 +98,8 @@ export const relationSelection = (
   search_fields: [`${field}.*`],
   display_fields: [`${field}.*`],
   value_field: [`${field}.*`],
-  multiple,
-});
+  multiple
+})
 
 export const listObject = (
   label = 'list',
@@ -115,8 +115,8 @@ export const listObject = (
   allow_add,
   collapsed,
   minimize_collapsed,
-  fields,
-});
+  fields
+})
 
 export const boolSelect = (
   label = 'bool',
@@ -126,10 +126,10 @@ export const boolSelect = (
   label,
   name,
   widget: 'boolean',
-  default: defaultVal,
-});
+  default: defaultVal
+})
 
 export const hiddenField = (name = 'hidden') => ({
   name,
-  widget: 'hidden',
-});
+  widget: 'hidden'
+})

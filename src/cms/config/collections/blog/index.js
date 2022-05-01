@@ -12,7 +12,7 @@ import * as settingsJSON from '../../../../data/settings/settings.json'
 
 const { author } = settingsJSON.siteMetadata
 
-export default {
+const blogCollection = {
   ...collectionDefaults('Blog', 'blog'),
   folder: 'src/posts',
   path: '{{year}}/{{slug}}/index',
@@ -28,14 +28,16 @@ export default {
     stringField('Short Description', 'description', true),
     stringField('Author', 'author', true, author),
     dateField('Publish Date', 'date', true),
-    relationSelection(
-      'Tag(s)',
-      'tags',
-      'settings',
-      'blogtags',
-      'tagname',
-      true
-    ),
+    // relationSelection(
+    //   'Tag(s)',
+    //   'tags',
+    //   'settings',
+    //   'blogtags',
+    //   'tagname',
+    //   true
+    // ),
     mdEditor('Body', 'body', false)
   ]
 }
+
+export default blogCollection
