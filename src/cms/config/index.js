@@ -7,8 +7,8 @@ const config = {
     name: 'git-gateway',
     branch: 'main'
   },
-  media_folder: 'src/static/img',
-  public_folder: '/static/img',
+  media_folder: '/static/img',
+  public_folder: '/img',
   local_backend: true,
   load_config_file: false,
   collections: [blogCollection, pageContentCollection, siteSettingsCollection]

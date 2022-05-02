@@ -1,36 +1,36 @@
-import { stringField, textField, objectField, hiddenField } from './fields';
+import { stringField, textField, objectField, hiddenField } from './fields'
 
 export const collectionDefaults = (label, name) => ({
   label,
   name,
   editor: {
-    preview: false,
-  },
-});
+    preview: false
+  }
+})
 
-export const pageDefaults = [
+export const pageDefaults = (templateKey = '') => [
   stringField('Menu title', 'title', true),
-  hiddenField('Menu', 'menu'),
+  hiddenField('templateKey', 'Template', templateKey),
   objectField('SEO', 'seo', [
     stringField('SEO title', 'title'),
-    textField('SEO description', 'description'),
-  ]),
-];
+    textField('SEO description', 'description')
+  ])
+]
 
 export const multiColorTitleDefaults = objectField('Title', 'title', [
   stringField('Text part 1', 'text_part_1'),
-  stringField('Text part 2', 'text_part_2'),
-]);
+  stringField('Text part 2', 'text_part_2')
+])
 
 export const buttonDefaults = (label = 'Button', name = 'button') =>
   objectField(label, name, [
     stringField('Text', 'text', true),
-    stringField('URL', 'url', true),
-  ]);
+    stringField('URL', 'url', true)
+  ])
 
 export const titleWithSubtitleDefaults = (subtitleIsMarkdown = false) => [
   multiColorTitleDefaults,
   subtitleIsMarkdown
     ? stringField('Subtitle', 'subtitle')
-    : textField('Subtitle', 'subtitle'),
-];
+    : textField('Subtitle', 'subtitle')
+]
