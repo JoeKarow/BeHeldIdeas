@@ -3,32 +3,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Hero from '../components/section/Hero'
-import ShowcaseTop from '../components/section/ShowcaseTop'
-
-export const IndexPageTemplate = ({ hero, about }, body) => {
-  return (
-    <>
-      <Hero
-        heading={hero.heading}
-        subheading={hero.subheading}
-        image={hero.image}
-        alt={hero.imgAlt}
-        thisSectionId="one"
-        nextSectionId="two"
-      />
-      <ShowcaseTop
-        coverImage={about.image}
-        coverImageAlt={about.imgAlt}
-        heading={about.heading}
-        subheading={about.subheading}
-        body={about.content}
-        thisSectionId="two"
-        nextSectionId="three"
-      />
-    </>
-  )
-}
+import { IndexPageTemplate } from '../components/templates/IndexPageTemplate'
 
 const IndexPage = ({ data }) => {
   const { hero, about } = data.mdx.frontmatter
