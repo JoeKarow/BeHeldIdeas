@@ -24,6 +24,15 @@ const sourceFilesystemList = [
     },
     __key: 'pages'
   },
+  // templates
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      name: 'templates',
+      path: `${__dirname}/src/templates`
+    },
+    __key: 'templates'
+  },
   // cms data files
   {
     resolve: 'gatsby-source-filesystem',
@@ -33,6 +42,7 @@ const sourceFilesystemList = [
     },
     __key: 'jsonData'
   },
+  // images
   {
     resolve: 'gatsby-source-filesystem',
     options: {
@@ -41,6 +51,16 @@ const sourceFilesystemList = [
     },
     __key: 'srcImages'
   }
+  // {
+  //   resolve: `gatsby-graphql-sharp`,
+  //   options: {
+  //     image_url_fields: [
+  //       //your graphql schema hierarchy
+  //       'mdx.frontmatter.about.imgURL',
+  //       'mdx.frontmatter.hero.imgURL'
+  //     ]
+  //   }
+  // }
 ]
 const pluginImageSharp = {
   resolve: 'gatsby-plugin-sharp',
@@ -50,14 +70,15 @@ const pluginImageSharp = {
       placeholder: 'blurred',
       quality: 50,
       breakpoints: [750, 1080, 1366, 1920],
-      backgroundColor: 'transparent',
-      tracedSVGOptions: {},
-      blurredOptions: {},
-      jpgOptions: {},
-      pngOptions: {},
-      webpOptions: {},
-      avifOptions: {}
-    }
+      backgroundColor: 'transparent'
+      // tracedSVGOptions: {},
+      // blurredOptions: {},
+      // jpgOptions: {},
+      // pngOptions: {},
+      // webpOptions: {},
+      // avifOptions: {}
+    },
+    stripMetadata: true
   }
 }
 const pluginMdx = {
@@ -66,8 +87,15 @@ const pluginMdx = {
     extensions: ['.mdx', '.md'],
     gatsbyRemarkPlugins: [
       {
+        resolve: 'gatsby-remark-copy-linked-files',
+        options: {
+          destinationDir: 'uploads'
+        }
+      },
+      {
         resolve: 'gatsby-remark-relative-images',
         options: {
+          staticFolderName: 'static/img',
           name: 'uploads'
         }
       },
@@ -81,17 +109,12 @@ const pluginMdx = {
         }
       },
       {
-        resolve: 'gatsby-remark-copy-linked-files',
-        options: {
-          destinationDir: 'static'
-        }
-      },
-      {
         resolve: 'gatsby-remark-external-links'
       }
     ]
   }
 }
+
 const pluginNetlifyCMS = {
   resolve: 'gatsby-plugin-netlify-cms',
   options: {
@@ -112,18 +135,19 @@ const pluginCSS = {
 }
 
 const plugins = [
+  ...sourceFilesystemList,
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sitemap',
   'gatsby-plugin-image',
   'gatsby-plugin-mdx',
   'gatsby-plugin-postcss',
-  'gatsby-transformer-json',
+  'gatsby-remark-images',
   'gatsby-transformer-sharp',
+  'gatsby-transformer-json',
   pluginImageSharp,
   pluginCSS,
   pluginNetlifyCMS,
 
-  ...sourceFilesystemList,
   //keep this last
   'gatsby-plugin-netlify'
 ]
