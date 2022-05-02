@@ -19,7 +19,7 @@ const Navbar = () => {
   `)
   const li = navigationJson.items.map(navitem => {
     return (
-      <li key={navitem.id}>
+      <li key={navitem.text}>
         <Link to={navitem.url}>{navitem.text}</Link>
       </li>
     )
