@@ -1,3 +1,4 @@
+const path = require('path')
 const cmsJsonSettings = require('./src/data/settings/settings.json')
 
 const { siteMetadata } = cmsJsonSettings
@@ -132,10 +133,26 @@ const webpackAnalyze = {
   }
 }
 
+const pluginPnpm = {
+  resolve: 'gatsby-plugin-pnpm',
+  options: {
+    include: [
+      'mini-css-extract-plugin'
+      //   'prop-types',
+      //   'query-string',
+      //   'lodash/merge',
+      //   'mitt',
+      //   '@gatsbyjs/reach-router/lib/utils',
+      //   'gatsby-link',
+      //   'gatsby-react-router-scroll'
+    ]
+    // projectPath: path.dirname(__dirname)
+  }
+}
+
 const plugins = [
   ...sourceFilesystemList,
   'gatsby-plugin-react-helmet',
-  // 'gatsby-plugin-sitemap',
   'gatsby-plugin-image',
   // 'gatsby-plugin-mdx',
   // 'gatsby-plugin-postcss',
@@ -149,6 +166,7 @@ const plugins = [
   pluginCSS,
   pluginNetlifyCMS,
 
+  pluginPnpm,
   //keep this last
   'gatsby-plugin-netlify'
 ]

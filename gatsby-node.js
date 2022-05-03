@@ -1,8 +1,8 @@
-const _ = require('lodash')
+// const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
-const { reporter } = require('gatsby-cli/lib/reporter/reporter')
+// const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+// const { reporter } = require('gatsby-cli/lib/reporter/reporter')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
