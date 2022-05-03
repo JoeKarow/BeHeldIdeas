@@ -32,7 +32,7 @@ export const query = graphql`
           heading
           image {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(width: 480)
             }
           }
         }
@@ -43,7 +43,7 @@ export const query = graphql`
           content
           image {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }

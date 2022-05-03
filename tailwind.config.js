@@ -5,7 +5,7 @@ module.exports = {
       sm: '481px',
       md: '737px',
       lg: '981px',
-      xl: '1281px',
+      xl: '1281px'
     },
     aspectRatio: {
       auto: 'auto',
@@ -26,14 +26,13 @@ module.exports = {
       13: '13',
       14: '14',
       15: '15',
-      16: '16',
-    },
+      16: '16'
+    }
   },
-  corePlugins: {
-  },
+  corePlugins: {},
   variants: {},
-  // plugins: [
-  //   require('@tailwindcss/typography'),
-  //   require('@tailwindcss/aspect-ratio'),
-  // ],
-};
+  plugins: [
+    require('@tailwindcss/typography')
+    //   require('@tailwindcss/aspect-ratio'),
+  ]
+}

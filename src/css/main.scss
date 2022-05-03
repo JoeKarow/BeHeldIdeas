@@ -19,24 +19,24 @@
   (
     xlarge: (
       1281px,
-      1680px,
+      1680px
     ),
     large: (
       981px,
-      1280px,
+      1280px
     ),
     medium: (
       737px,
-      980px,
+      980px
     ),
     small: (
       481px,
-      736px,
+      736px
     ),
     xsmall: (
       null,
-      480px,
-    ),
+      480px
+    )
   )
 );
 
@@ -928,7 +928,8 @@ input[type='radio'] {
     z-index: 1;
   }
 
-  img {
+  img,
+  picture {
     border-radius: _size(border-radius);
     display: block;
   }
@@ -1348,7 +1349,8 @@ input[type='button'],
   .image.main {
     display: none;
 
-    img {
+    img,
+    picture {
       position: relative;
     }
   }
@@ -1796,7 +1798,8 @@ body.landing {
       vertical-align: middle;
       width: 18em;
 
-      img {
+      img,
+      picture {
         border-radius: 100%;
         display: block;
         width: 100%;

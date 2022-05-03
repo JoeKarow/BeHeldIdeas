@@ -12,7 +12,6 @@ const Hero = ({
   alt = ''
 }) => {
   const imgInfo = { image, alt }
-  console.log(imgInfo)
   return (
     <section id={thisSectionId} className="banner">
       <div className="content">

@@ -15,7 +15,7 @@ const ShowcaseTop = ({
   body
 }) => {
   const imgInfo = { image: coverImage, alt: coverImageAlt }
-  console.log(imgInfo)
+
   return (
     <section id={thisSectionId} className="spotlight style1 bottom">
       <span className="image fit main">

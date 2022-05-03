@@ -9,6 +9,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
   const { alt = '', childImageSharp, image } = imageInfo
 
   if (!!image && !!image.childImageSharp) {
+    console.log('image component: first condition')
     return (
       <GatsbyImage
         image={image.childImageSharp.gatsbyImageData}
@@ -17,6 +18,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
       />
     )
   } else if (!!childImageSharp) {
+    console.log('image component: second condition')
     return (
       <GatsbyImage
         image={childImageSharp.gatsbyImageData}
@@ -26,9 +28,11 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     )
     // for Netlify CMS
   } else if (image) {
+    console.log('image component: third condition')
     return <img src={image} alt={alt} />
     // <img style={{ imageStyle }} src={image} alt={alt} />
   } else {
+    console.log('image component: no condition')
     return null
   }
 }
