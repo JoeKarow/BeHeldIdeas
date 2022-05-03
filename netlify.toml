@@ -4,11 +4,13 @@
   functions = "netlify/functions"
   publish = "public"
 
-  [build.environment]
+[build.environment]
   NPM_FLAGS="--prefix=/dev/null"
 
 [[plugins]]
-  package = "./.netlify/plugins/pnpm-preinstaller"
+  # package = "./.netlify/plugins/pnpm-preinstaller"
+  package = "/.netlify/plugins/netlify-plugin-pnpm"
+
 
 [[plugins]]
   package = "@netlify/plugin-gatsby"
