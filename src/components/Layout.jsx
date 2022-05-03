@@ -4,12 +4,13 @@ import Footer from './section/Footer'
 import Navbar from './section/Navbar'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   console.log('layout component')
   return (
-    <div>
+    <>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -49,9 +50,9 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div>{children}</div>
+      <ParallaxProvider>{children}</ParallaxProvider>
       <Footer />
-    </div>
+    </>
   )
 }
 

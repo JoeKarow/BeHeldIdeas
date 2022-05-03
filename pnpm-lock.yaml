@@ -14,6 +14,7 @@ specifiers:
   babel-eslint: ^10.0.0
   eslint: '>= 4.12.1'
   gatsby: ^4.13.1
+  gatsby-background-image: ^1.6.0
   gatsby-graphql-sharp: ^1.1.4
   gatsby-plugin-graphql-config: ^1.13.0
   gatsby-plugin-image: ^2.13.0
@@ -36,6 +37,7 @@ specifiers:
   gatsby-source-graphql: ^4.13.0
   gatsby-transformer-json: ^4.13.0
   gatsby-transformer-sharp: ^4.13.0
+  gbimage-bridge: ^0.2.1
   graphql: '>=15.0.0 <16.0.0'
   mini-css-extract-plugin: ^2.6.0
   netlify-cms-app: ^2.15.72
@@ -51,6 +53,8 @@ specifiers:
   react-dom: ^17
   react-helmet: ^6.1.0
   react-scroll: ^1.8.7
+  react-scroll-parallax: ^3.1.0
+  react-socks: ^2.2.0
   react-vertical-timeline-component: ^3.5.2
   remark-mdx: ^2.1.1
   resolve-url-loader: ^5.0.0
@@ -73,6 +77,7 @@ dependencies:
   babel-eslint: 10.1.0_eslint@8.14.0
   eslint: 8.14.0
   gatsby: 4.13.1_3fpj2wtlurkcpivifbujajrtse
+  gatsby-background-image: 1.6.0_ka2clbwrsnttfzdqd3f4h2jph4
   gatsby-graphql-sharp: 1.1.4_mdbh4cr5l56fm6z63mpxyrmeba
   gatsby-plugin-graphql-config: 1.13.0_gatsby@4.13.1
   gatsby-plugin-image: 2.13.0_buwea2y7ana52tvyd6bliv4oje
@@ -95,6 +100,7 @@ dependencies:
   gatsby-source-graphql: 4.13.0_7rkzflokm52qiyvtfgwzdm72pm
   gatsby-transformer-json: 4.13.0_gatsby@4.13.1
   gatsby-transformer-sharp: 4.13.0_thp77jon2mybn6o2nmu7yzdkm4
+  gbimage-bridge: 0.2.1_4xx35hrh5loe76ojjlcucaofsy
   graphql: 15.8.0
   mini-css-extract-plugin: 2.6.0_webpack@5.72.0
   netlify-cms-app: 2.15.72_jwd4hamw2alefwgnoebr4be42i
@@ -109,6 +115,8 @@ dependencies:
   react-dom: 17.0.2_react@17.0.2
   react-helmet: 6.1.0_react@17.0.2
   react-scroll: 1.8.7_sfoxds7t5ydpegc3knd667wn6m
+  react-scroll-parallax: 3.1.0_sfoxds7t5ydpegc3knd667wn6m
+  react-socks: 2.2.0_sfoxds7t5ydpegc3knd667wn6m
   react-vertical-timeline-component: 3.5.2_react@17.0.2
   remark-mdx: 2.1.1
   resolve-url-loader: 5.0.0
@@ -4883,6 +4891,10 @@ packages:
       uuid: 3.4.0
     dev: false
 
+  /bezier-easing/2.1.0:
+    resolution: {integrity: sha1-wE3+i5JtbsrKGBPWn/F5t8ICXYY=}
+    dev: false
+
   /big.js/5.2.2:
     resolution: {integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==}
     dev: false
@@ -7456,6 +7468,12 @@ packages:
       to-regex-range: 5.0.1
     dev: false
 
+  /filter-invalid-dom-props/2.1.0:
+    resolution: {integrity: sha512-M+1dTOodTQwB9Ncin+EwfgksarMCeAW1V2BjPeC5THFSs56rtEX/VF/Mrur9C9A8eyaY+2h25VFAiVr+bkVkwA==}
+    dependencies:
+      html-attributes: 1.1.0
+    dev: false
+
   /filter-obj/1.1.0:
     resolution: {integrity: sha1-mzERErxsYSehbgFsbF1/GeCAXFs=}
     engines: {node: '>=0.10.0'}
@@ -7655,6 +7673,23 @@ packages:
   /fuzzy/0.1.3:
     resolution: {integrity: sha1-THbsL/CsGjap3M+aAN+GIweNTtg=}
     engines: {node: '>= 0.6.0'}
+    dev: false
+
+  /gatsby-background-image/1.6.0_ka2clbwrsnttfzdqd3f4h2jph4:
+    resolution: {integrity: sha512-d3HkZnpfU5KHrjt0Z5Mw6ezOY5OFuPfrHIarN7CMhq+CyUnPTxUuFtic0OV7bgi5J6Z/RGVg36FvcnX69xuDgw==}
+    peerDependencies:
+      gatsby: ^2.0.0 || ^3.0.0 || ^4.0.0
+      react: '>=16.x'
+      react-dom: '>=16.x'
+    dependencies:
+      '@babel/runtime': 7.17.9
+      filter-invalid-dom-props: 2.1.0
+      gatsby: 4.13.1_3fpj2wtlurkcpivifbujajrtse
+      global: 4.4.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      short-uuid: 4.2.0
+      sort-media-queries: 0.2.2
     dev: false
 
   /gatsby-cli/4.13.0:
@@ -8607,6 +8642,22 @@ packages:
       wide-align: 1.1.5
     dev: false
 
+  /gbimage-bridge/0.2.1_4xx35hrh5loe76ojjlcucaofsy:
+    resolution: {integrity: sha512-Wy7fiXyYewxzgs17Mx+msSbxSK8JGbkVDQmkuyXER6T3wfZHC04PLnzP1ZrFr7qpboOdIExUChp3TZtzRor4AA==}
+    peerDependencies:
+      gatsby: ^3.0.0 || ^4.0.0
+      gatsby-background-image: ^1.0.0
+      gatsby-plugin-image: ^1.0.0 || ^2.0.0
+      react: ^16.14.0 || ^17.0.0
+      react-dom: ^16.14.0 || ^17.0.0
+    dependencies:
+      gatsby: 4.13.1_3fpj2wtlurkcpivifbujajrtse
+      gatsby-background-image: 1.6.0_ka2clbwrsnttfzdqd3f4h2jph4
+      gatsby-plugin-image: 2.13.0_buwea2y7ana52tvyd6bliv4oje
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
   /gensync/1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
     engines: {node: '>=6.9.0'}
@@ -9249,6 +9300,11 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       lru-cache: 6.0.0
+    dev: false
+
+  /html-attributes/1.1.0:
+    resolution: {integrity: sha1-ggJ6T6x6YHDqbBjMOIauoY1t6gk=}
+    engines: {node: '>= 0.10.26', npm: '>=1.4.3'}
     dev: false
 
   /html-entities/1.4.0:
@@ -13089,6 +13145,13 @@ packages:
     resolution: {integrity: sha512-v8tweI900AUkZN6heMU/4Uy4cXRc2AYNRggVmTR+dEncawDJgCdLMximOVA2p4qO57WMynangsfGRb5WD6L1Bg==}
     dev: false
 
+  /parallax-controller/1.4.0:
+    resolution: {integrity: sha512-sNDvyww8gS5glisJLuSC1ZdMXkvMkQnenkFLbQWZ3HzOzimtW99oAHXJacyGijh1d7PfEJlGofBM97iMNhh8NQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      bezier-easing: 2.1.0
+    dev: false
+
   /param-case/2.1.1:
     resolution: {integrity: sha1-35T9jPZTHs915r75oIWPvHK+Ikc=}
     dependencies:
@@ -14526,6 +14589,18 @@ packages:
       tiny-warning: 1.0.3
     dev: false
 
+  /react-scroll-parallax/3.1.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-L9vMS5zEsBlIPTfREJ7UuFF0chC+VH7sjUK6IficDTBhKF2hJDTJJcYyE7H/BTYTVj7TwsoVDRWsnJj2kcYjCA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16.8.0-0 || >=17.0.1
+      react-dom: ^16.8.0-0 || >=17.0.1
+    dependencies:
+      parallax-controller: 1.4.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
   /react-scroll-sync/0.9.0_wcqkhtmu7mswc6yz4uyexck3ty:
     resolution: {integrity: sha512-IaMUSTbarj9mhjVtBl9I45Er8gQqV8rdb9A0eK77JJ8MvnLcFIlnoiXVx1NS9ACy9QELq7xCTxdIVEdhDV9R0Q==}
     peerDependencies:
@@ -14575,6 +14650,16 @@ packages:
       react: ^16.3.0 || ^17.0.0
     dependencies:
       react: 17.0.2
+    dev: false
+
+  /react-socks/2.2.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-JHK7WM4nA8M28CJ/PXlJI/yjg61TlhdsM8BAD5tvWDEO0uT9iFpU671SGl43TEcdPmlytB7nc95PzWIFYTI4/w==}
+    peerDependencies:
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /react-sortable-hoc/2.0.0_sfoxds7t5ydpegc3knd667wn6m:
@@ -15679,6 +15764,14 @@ packages:
     resolution: {integrity: sha512-Vpfqwm4EnqGdlsBFNmHhxhElJYrdfcxPThu+ryKS5J8L/fhAwLazFZtq+S+TWZ9ANj2piSQLGj6NQg+lKPmxrw==}
     dev: false
 
+  /short-uuid/4.2.0:
+    resolution: {integrity: sha512-r3cxuPPZSuF0QkKsK9bBR7u+7cwuCRzWzgjPh07F5N2iIUNgblnMHepBY16xgj5t1lG9iOP9k/TEafY1qhRzaw==}
+    engines: {node: '>=8'}
+    dependencies:
+      any-base: 1.1.0
+      uuid: 8.3.2
+    dev: false
+
   /side-channel/1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
     dependencies:
@@ -15967,6 +16060,12 @@ packages:
   /sort-desc/0.1.1:
     resolution: {integrity: sha1-GYuMDN6wlcRjNBhh45JdTuNZqe4=}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /sort-media-queries/0.2.2:
+    resolution: {integrity: sha1-/d/B5w1mJ1kJG2ojd29EiGg9yh4=}
+    dependencies:
+      xtend: 4.0.2
     dev: false
 
   /sort-object/0.3.2:
