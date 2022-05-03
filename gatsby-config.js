@@ -150,6 +150,14 @@ const pluginPnpm = {
   }
 }
 
+const pluginPageCreator = {
+  resolve: 'gatsby-plugin-page-creator',
+  options: {
+    path: `${__dirname}/src/pages`,
+    ignore: [`**/*.mdx`, `**.*.md`]
+  }
+}
+
 const plugins = [
   ...sourceFilesystemList,
   'gatsby-plugin-react-helmet',
@@ -165,7 +173,7 @@ const plugins = [
   pluginImageSharp,
   pluginCSS,
   pluginNetlifyCMS,
-
+  pluginPageCreator,
   pluginPnpm,
   //keep this last
   'gatsby-plugin-netlify'

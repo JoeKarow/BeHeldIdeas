@@ -1,7 +1,7 @@
-// const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
-// const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+// const _ = require('lodash')
+
 // const { reporter } = require('gatsby-cli/lib/reporter/reporter')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
@@ -17,6 +17,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           slug
         }
       }
+      settingsJson {
+        siteMetadata {
+          siteUrl
+        }
+      }
     }
   `)
 
@@ -25,7 +30,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const pages = result.data.allMdx.nodes
-  console.table(pages)
+
   pages.forEach(page => {
     if (page.frontmatter.generate) {
       actions.createPage({
@@ -40,6 +45,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           templateKey: page.frontmatter.templateKey
         }
       })
+      reporter.info(
+        `👷 🛠 Built page "/${page.slug}" using template "${page.frontmatter.templateKey}"`
+      )
     } else {
       reporter.warn(`Skipping ${page.slug}, 'generate' set to FALSE`)
     }
