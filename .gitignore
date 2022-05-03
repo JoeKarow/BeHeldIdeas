@@ -5,3 +5,6 @@ public
 .vscode
 # Netlify CLI Config
 .netlify/state.json
+
+# PNPM ignore package-lock
+package-lock.json
