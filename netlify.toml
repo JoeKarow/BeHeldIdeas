@@ -5,7 +5,7 @@
   publish = "public"
 
 [build.environment]
-  NPM_FLAGS="--prefix=/dev/null"
+  NPM_FLAGS="--prefix=/"
 
 [[plugins]]
   package = "./plugins/pnpm-preinstaller"
