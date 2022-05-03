@@ -36,7 +36,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       actions.createPage({
         path: `/${page.slug}`,
         component: require.resolve(
-          `./src/templates/${page.frontmatter.templateKey}.js`
+          `./src/templates/${page.frontmatter.templateKey}.jsx`
         ),
         context: {
           slug: page.slug,

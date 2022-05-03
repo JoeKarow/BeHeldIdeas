@@ -1,4 +1,3 @@
-// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import PreviewCompatibleImage from '../PreviewCompatibleImage'

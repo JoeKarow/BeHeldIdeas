@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../components/Layout'
 import { graphql, Reporter, useStaticQuery } from 'gatsby'
@@ -20,6 +21,17 @@ const ResumePage = ({ data }) => {
       </div>
     </Layout>
   )
+}
+
+ResumePage.propTypes = {
+  data: PropTypes.shape({
+    mdx: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        items: PropTypes.any,
+        timelineOptions: PropTypes.any
+      })
+    })
+  })
 }
 export default ResumePage
 export const query = graphql`

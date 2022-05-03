@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
-import Footer from '../components/section/Footer'
-import Navbar from '../components/section/Navbar'
+import Footer from './section/Footer'
+import Navbar from './section/Navbar'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
