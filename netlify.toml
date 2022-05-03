@@ -14,7 +14,7 @@
 
 [[plugins]]
 #   # package = "./.netlify/plugins/pnpm-preinstaller"
-  package = "/.netlify/plugins/netlify-plugin-pnpm"
+  package = "./.netlify/plugins/netlify-plugin-pnpm"
 
 
 [[plugins]]
