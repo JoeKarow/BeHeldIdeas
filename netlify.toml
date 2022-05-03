@@ -4,8 +4,11 @@
   functions = "netlify/functions"
   publish = "public"
 
+  [build.environment]
+  NPM_FLAGS="--prefix=/dev/null"
+
 [[plugins]]
-package = "./.netlify/plugins/pnpm-preinstaller"
+  package = "./.netlify/plugins/pnpm-preinstaller"
 
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
