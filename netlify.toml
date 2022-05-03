@@ -6,6 +6,7 @@
 
 [build.environment]
   NPM_FLAGS="--prefix=/"
+  NODE_VERSION="v14"
 
 [[plugins]]
   package = "./plugins/pnpm-preinstaller"
