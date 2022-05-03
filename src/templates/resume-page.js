@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import { graphql, Reporter, useStaticQuery } from 'gatsby'
-import TimelinePageTemplate from '../components/templates/timelinePageTemplate'
+import TimelinePageTemplate from '../components/templates/TimelinePageTemplate'
 
 const ResumePage = ({ data }) => {
   const { items, timelineOptions } = data.mdx.frontmatter
