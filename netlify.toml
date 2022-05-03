@@ -12,9 +12,9 @@
 #   package = "./plugins/pnpm-preinstaller"
 
 
-[[plugins]]
-#   # package = "./.netlify/plugins/pnpm-preinstaller"
-  package = "./.netlify/plugins/netlify-plugin-pnpm"
+# [[plugins]]
+# #   # package = "./.netlify/plugins/pnpm-preinstaller"
+#   package = "./.netlify/plugins/netlify-plugin-pnpm"
 
 
 [[plugins]]
