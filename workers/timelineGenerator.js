@@ -12,6 +12,7 @@ const timelineGenerator = items =>
     }
     return (
       <TimelineCard
+        key={itemKey}
         itemOptions={cardOptions}
         dateText={item.dates.text}
         heading={item.heading}
