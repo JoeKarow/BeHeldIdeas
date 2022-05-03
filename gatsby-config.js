@@ -125,17 +125,25 @@ const pluginCSS = {
   }
 }
 
+const webpackAnalyze = {
+  resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+  options: {
+    devMode: true
+  }
+}
+
 const plugins = [
   ...sourceFilesystemList,
   'gatsby-plugin-react-helmet',
   // 'gatsby-plugin-sitemap',
   'gatsby-plugin-image',
   // 'gatsby-plugin-mdx',
-  'gatsby-plugin-postcss',
+  // 'gatsby-plugin-postcss',
   'gatsby-remark-images',
   'gatsby-transformer-sharp',
   'gatsby-transformer-json',
   'gatsby-plugin-graphql-config',
+  'gatsby-plugin-page-data-preview',
   pluginMdx,
   pluginImageSharp,
   pluginCSS,

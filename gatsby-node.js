@@ -36,6 +36,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         context: {
           slug: page.slug,
           id: page.id,
+          pageID: page.id,
           templateKey: page.frontmatter.templateKey
         }
       })
