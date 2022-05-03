@@ -7,11 +7,7 @@ import { IndexPageTemplate } from '../components/templates/IndexPageTemplate'
 
 const IndexPage = ({ data }) => {
   const { hero, about } = data.mdx.frontmatter
-  return (
-    <Layout>
-      <IndexPageTemplate hero={hero} about={about} body={data.mdx.body} />
-    </Layout>
-  )
+  return <IndexPageTemplate hero={hero} about={about} body={data.mdx.body} />
 }
 
 export default IndexPage

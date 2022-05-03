@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../components/Layout'
-import { graphql, Reporter, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import TimelinePageTemplate from '../components/templates/TimelinePageTemplate'
 
 const ResumePage = ({ data }) => {
@@ -10,7 +10,7 @@ const ResumePage = ({ data }) => {
   console.log(timelineOptions)
 
   return (
-    <Layout>
+    <>
       <div className="wrapper style1">
         <section className="content container">
           <TimelinePageTemplate
@@ -19,7 +19,7 @@ const ResumePage = ({ data }) => {
           />
         </section>
       </div>
-    </Layout>
+    </>
   )
 }
 
