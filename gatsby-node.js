@@ -12,6 +12,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           id
           frontmatter {
             templateKey
+            generate
           }
           slug
         }
@@ -26,16 +27,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const pages = result.data.allMdx.nodes
   console.table(pages)
   pages.forEach(page => {
-    actions.createPage({
-      path: `/${page.slug}`,
-      component: require.resolve(
-        `./src/templates/${page.frontmatter.templateKey}.js`
-      ),
-      context: {
-        id: page.id,
-        templateKey: page.frontmatter.templateKey
-      }
-    })
+    if (page.frontmatter.generate) {
+      actions.createPage({
+        path: `/${page.slug}`,
+        component: require.resolve(
+          `./src/templates/${page.frontmatter.templateKey}.js`
+        ),
+        context: {
+          slug: page.slug,
+          id: page.id,
+          templateKey: page.frontmatter.templateKey
+        }
+      })
+    } else {
+      reporter.warn(`Skipping ${page.slug}, 'generate' set to FALSE`)
+    }
   })
 }
 

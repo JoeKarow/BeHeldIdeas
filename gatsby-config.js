@@ -24,15 +24,6 @@ const sourceFilesystemList = [
     },
     __key: 'pages'
   },
-  // templates
-  {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      name: 'templates',
-      path: `${__dirname}/src/templates`
-    },
-    __key: 'templates'
-  },
   // cms data files
   {
     resolve: 'gatsby-source-filesystem',
@@ -137,13 +128,15 @@ const pluginCSS = {
 const plugins = [
   ...sourceFilesystemList,
   'gatsby-plugin-react-helmet',
-  'gatsby-plugin-sitemap',
+  // 'gatsby-plugin-sitemap',
   'gatsby-plugin-image',
-  'gatsby-plugin-mdx',
+  // 'gatsby-plugin-mdx',
   'gatsby-plugin-postcss',
   'gatsby-remark-images',
   'gatsby-transformer-sharp',
   'gatsby-transformer-json',
+  'gatsby-plugin-graphql-config',
+  pluginMdx,
   pluginImageSharp,
   pluginCSS,
   pluginNetlifyCMS,

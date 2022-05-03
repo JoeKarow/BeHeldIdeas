@@ -13,10 +13,11 @@ const IndexPage = ({ data }) => {
     </Layout>
   )
 }
+
 export default IndexPage
 
-export const pageQuery = graphql`
-  query IndexPageQuery($id: String) {
+export const query = graphql`
+  query IndexPageQuery($id: String!) {
     mdx(id: { eq: $id }) {
       frontmatter {
         title

@@ -3,7 +3,7 @@ import {
   imageField,
   mdEditor,
   objectField,
-  relationSelection,
+  // relationSelection,
   stringField
 } from '../../fields'
 import { collectionDefaults } from '../../patterns'

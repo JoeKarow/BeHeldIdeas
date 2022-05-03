@@ -174,3 +174,18 @@ export const hiddenField = (
   widget: 'hidden',
   default: defaultVal
 })
+
+export const colorPicker = (
+  label = 'color',
+  name = 'color',
+  defaultColor = '',
+  allowInput = false,
+  enableAlpha = false
+) => ({
+  label,
+  name,
+  default: defaultColor,
+  allowInput,
+  enableAlpha,
+  widget: 'color'
+})
