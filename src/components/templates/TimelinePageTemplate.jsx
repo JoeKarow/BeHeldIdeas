@@ -1,6 +1,5 @@
 import React from 'react'
 import { VerticalTimeline } from 'react-vertical-timeline-component'
-import { TimelineCard } from '../TimelineCard'
 import 'react-vertical-timeline-component/style.min.css'
 import timelineGenerator from '../../../workers/timelineGenerator'
 import PropTypes from 'prop-types'
