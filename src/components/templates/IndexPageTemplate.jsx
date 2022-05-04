@@ -22,6 +22,15 @@ export const IndexPageTemplate = ({ hero, about }, body) => {
         thisSectionId="two"
         nextSectionId="three"
       />
+      {/* <ShowcaseTop
+        coverImage={about.image}
+        coverImageAlt={about.imgAlt}
+        heading={about.heading}
+        subheading={about.subheading}
+        body={about.content}
+        thisSectionId="three"
+        nextSectionId="three"
+      /> */}
     </>
   )
 }
