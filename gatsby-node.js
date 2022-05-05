@@ -1,10 +1,22 @@
-const path = require('path')
+// const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
-// const _ = require('lodash')
 
-// const { reporter } = require('gatsby-cli/lib/reporter/reporter')
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+  type Mdx implements Node
+    @mimeTypes(types: ["text/x-markdown"]){
+      id: ID!
+    }
+  `
+  createTypes(typeDefs)
+}
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
+  //call component & worker indexer
+  // reporter.info('Generating index.js files for Components & Workers')
+  // await generateIndexes()
+
   const result = await graphql(`
     {
       allMdx {
@@ -56,7 +68,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
 exports.onCreateNode = async ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-  //   fmImagesToRelative(node) // convert image paths for gatsby images
 
   if (node.internal.type === `Mdx`) {
     const value = await createFilePath({ node, getNode })
@@ -68,54 +79,44 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
   }
 }
 
-// exports.createPages = async ({ actions, graphql }) => {
-//   const { createPage } = actions
+exports.createSchemaCustomization = ({
+  actions: { createTypes, createFieldExtension },
+  createContentDigest
+}) => {
+  createFieldExtension({
+    name: 'mdx',
+    extend() {
+      return {
+        type: 'String',
+        resolve(source, args, context, info) {
+          // Grab field
+          const value = source[info.fieldName]
+          // Isolate MDX
+          const mdxType = info.schema.getType('Mdx')
+          // Grab just the body contents of what MDX generates
+          const { resolve } = mdxType.getFields().body
 
-//   await graphql(`
-//     {
-//       allMdx {
-//         edges {
-//           node {
-//             id
-//             frontmatter {
-//               templateKey
-//             }
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   `).then(result => {
-//     // check for errors & log
-//     if (result.errors) {
-//       reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
-//       result.errors.forEach(e => console.error(e.toString()))
-//       return Promise.reject(result.errors)
-//     }
-//     const posts = result.data.allMdx.edges
+          return resolve({
+            rawBody: value,
+            internal: {
+              contentDigest: createContentDigest(value) // Used for caching
+            },
+            args,
+            context,
+            info
+          })
+        }
+      }
+    }
+  })
 
-//     posts.forEach(edge => {
-//       const { id } = edge.node
-//       const { templateKey } = edge.node.frontmatter
-//       createPage({
-//         path: `/${edge.node.slug}`,
-//         //tags part goes here??
-//         component: path.resolve(
-//           `${__dirname}/src/templates/${String(templateKey)}.js`
-//         ),
-//         // additional info
-//         context: {
-//           id,
-//           template: templateKey
-//         }
-//       })
-//       reporter.info(
-//         `Created Page: /${edge.node.slug} with contexts passed: ${templateKey} ${id}`
-//       )
-//     })
+  createTypes(`
+    type Mdx implements Node {
+      frontmatter: MdxFrontmatter
+    }
 
-//     //tagging logic goes here to create /tags/
-
-//     //create blog post logic goes here later
-//   })
-// }
+    type MdxFrontmatterItems {
+      body: String @mdx
+    }
+  `)
+}
