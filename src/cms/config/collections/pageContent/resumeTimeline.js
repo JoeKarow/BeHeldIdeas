@@ -11,16 +11,8 @@ import { pageDefaults } from '../../patterns'
 const timelineItem = [
   stringField('Title', 'heading', true),
   stringField('Company', 'subheading', true),
-  objectField(
-    'Dates',
-    'dates',
-    [
-      stringField('Display', 'text', true),
-      colorPicker('Background Color', 'background'),
-      colorPicker('Text Color', 'color')
-    ],
-    true
-  ),
+  stringField('Dates', 'dates', true),
+  stringField('Iconify Icon Code', 'icon', true),
   mdEditor('Body Text', 'body')
 ]
 
@@ -34,6 +26,6 @@ export const resumeTimeline = {
       boolSelect('Animate Entry?', 'animate', true),
       colorPicker('Line Color', 'lineColor')
     ]),
-    listObject('Timeline Entries', 'items', timelineItem, true, true)
+    listObject('Timeline Entries', 'items', timelineItem, true, true, false)
   ]
 }

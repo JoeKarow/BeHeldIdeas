@@ -8,13 +8,19 @@ export const collectionDefaults = (label, name) => ({
   }
 })
 
-export const pageDefaults = (templateKey = '') => [
+export const pageDefaults = (templateKey = '', startCollapsed = true) => [
   stringField('Menu title', 'title', true),
   hiddenField('templateKey', 'Template', templateKey),
-  objectField('SEO', 'seo', [
-    stringField('SEO title', 'title'),
-    textField('SEO description', 'description')
-  ])
+  objectField(
+    'SEO',
+    'seo',
+    [
+      stringField('SEO title', 'title'),
+      textField('SEO description', 'description')
+    ],
+    true,
+    true
+  )
 ]
 
 export const multiColorTitleDefaults = objectField('Title', 'title', [

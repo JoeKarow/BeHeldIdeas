@@ -24,13 +24,15 @@ export const objectField = (
   label = 'Object',
   name = 'object',
   fields = [],
-  required = true
+  required = true,
+  collapsed = true
 ) => ({
   label,
   name,
   widget: 'object',
   fields,
-  required
+  required,
+  collapsed
 })
 
 export const imageField = (
