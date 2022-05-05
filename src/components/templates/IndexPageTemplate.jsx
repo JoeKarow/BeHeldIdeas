@@ -1,8 +1,11 @@
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
-import Hero from '../section/Hero'
-import ShowcaseTop from '../section/ShowcaseTop'
+import { Hero, ShowcaseTop } from '../'
 
-export const IndexPageTemplate = ({ hero, about }, body) => {
+const IndexPageTemplate = ({ hero, about, mdx }, body) => {
+  // debugger
+  console.log(mdx)
   return (
     <>
       <Hero
@@ -13,6 +16,10 @@ export const IndexPageTemplate = ({ hero, about }, body) => {
         thisSectionId="one"
         nextSectionId="two"
       />
+      <MDXProvider>
+        <MDXRenderer>{mdx.body}</MDXRenderer>
+      </MDXProvider>
+      {/* <MDXRenderer>{mdx.mdxAST}</MDXRenderer> */}
       <ShowcaseTop
         coverImage={about.image}
         coverImageAlt={about.imgAlt}
@@ -22,7 +29,7 @@ export const IndexPageTemplate = ({ hero, about }, body) => {
         thisSectionId="two"
         nextSectionId="three"
       />
-      {/* <ShowcaseTop
+      <ShowcaseTop
         coverImage={about.image}
         coverImageAlt={about.imgAlt}
         heading={about.heading}
@@ -30,7 +37,9 @@ export const IndexPageTemplate = ({ hero, about }, body) => {
         body={about.content}
         thisSectionId="three"
         nextSectionId="three"
-      /> */}
+      />
     </>
   )
 }
+
+export default IndexPageTemplate

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
-import PreviewCompatibleImage from '../PreviewCompatibleImage'
+import { PreviewCompatibleImage } from '../'
 
 const Hero = ({
   thisSectionId,
@@ -24,7 +24,7 @@ const Hero = ({
       </div>
       <ScrollLink
         to={nextSectionId}
-        className="goto-next"
+        className="goto-next animate-bounce"
         activeClass="active"
         smooth={true}
         offset={0}

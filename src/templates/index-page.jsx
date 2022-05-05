@@ -2,12 +2,23 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
-import { IndexPageTemplate } from '../components/templates/IndexPageTemplate'
+import { IndexPageTemplate } from '../components'
 
 const IndexPage = ({ data }) => {
+  // console.log(data.mdx)
+  const { mdx } = data
   const { hero, about } = data.mdx.frontmatter
-  return <IndexPageTemplate hero={hero} about={about} body={data.mdx.body} />
+  // console.log(hero)
+  // console.log(about)
+  // console.log(mdx)
+  return (
+    <IndexPageTemplate
+      hero={hero}
+      about={about}
+      body={data.mdx.body}
+      mdx={mdx}
+    />
+  )
 }
 
 export default IndexPage
@@ -44,6 +55,9 @@ export const query = graphql`
           }
         }
       }
+      mdxAST
+      rawBody
+      body
     }
   }
 `
