@@ -151,6 +151,7 @@ const pluginPnpm = {
 }
 
 const pluginPageCreator = {
+  //fixes the issue where initial MDX builds are blank
   resolve: 'gatsby-plugin-page-creator',
   options: {
     path: `${__dirname}/src/pages`,

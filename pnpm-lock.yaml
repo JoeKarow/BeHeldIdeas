@@ -12,7 +12,7 @@ specifiers:
   '@tailwindcss/typography': ^0.5.2
   '@types/react': '>=16.3.0 <17.0.0 || >=17.0.0 <18.0.0'
   autoprefixer: ^10.4.5
-  babel-eslint: ^10.0.0
+  babel-eslint: ^10.1.0
   eslint: '>= 4.12.1'
   gatsby: ^4.13.1
   gatsby-background-image: ^1.6.0
@@ -47,7 +47,7 @@ specifiers:
   postcss: ^8.4.13
   postcss-scss: ^4.0.4
   prettier: ^2.6.2
-  prettier-config-standard: ^1.0.0
+  prettier-config-standard: ^5.0.0
   prettier-eslint: ^14.0.2
   prop-types: ^15.8.1
   react: ^17
@@ -111,7 +111,7 @@ dependencies:
   postcss: 8.4.13
   postcss-scss: 4.0.4_postcss@8.4.13
   prettier: 2.6.2
-  prettier-config-standard: 1.0.1
+  prettier-config-standard: 5.0.0_prettier@2.6.2
   prettier-eslint: 14.0.2
   prop-types: 15.8.1
   react: 17.0.2
@@ -13805,8 +13805,12 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /prettier-config-standard/1.0.1:
-    resolution: {integrity: sha512-S0zuixvAFlc0zruhYEDMsjt2VG/e5S5hSbqGuxTMWA0ygjII8EP9U7c/wsCQyjjAoaYG82bUsVmaSQ6veQ+u6g==}
+  /prettier-config-standard/5.0.0_prettier@2.6.2:
+    resolution: {integrity: sha512-QK252QwCxlsak8Zx+rPKZU31UdbRcu9iUk9X1ONYtLSO221OgvV9TlKoTf6iPDZtvF3vE2mkgzFIEgSUcGELSQ==}
+    peerDependencies:
+      prettier: ^2.4.0
+    dependencies:
+      prettier: 2.6.2
     dev: false
 
   /prettier-eslint/14.0.2:
