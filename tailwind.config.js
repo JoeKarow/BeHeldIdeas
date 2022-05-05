@@ -5,54 +5,60 @@ module.exports = {
       sm: '481px',
       md: '737px',
       lg: '981px',
-      xl: '1281px'
+      xl: '1281px',
+      tl: '1170px'
     },
-    // extend: {
-    // HTML5up Theme Colors
-    colors: {
-      bg: '#1c1d26',
-      'bg-transparent': 'rgba(23,24,32,0.95)',
-      'fg-bold': '#ffffff',
-      fg: 'rgba(255,255,255,0.75)',
-      'fg-light': 'rgba(255,255,255,0.5)',
-      'fg-lighter': 'rgba(255,255,255,0.15)',
-      border: 'rgba(255,255,255,0.3)',
-      'border-bg': 'rgba(255,255,255,0.075)',
-      border2: 'rgba(255,255,255,0.5)',
-      'border2-bg': 'rgba(255,255,255,0.25)',
-      accent1: '#e44c65',
-      accent2: '#272833',
-      'accent2-transparent': 'rgba(39,40,51,0.965)',
-      accent3: '#5480f1',
-      accent4: '#39c088'
+    extend: {
+      // HTML5up Theme Colors
+      colors: {
+        bg: '#1c1d26',
+        'bg-transparent': 'rgba(23,24,32,0.95)',
+        'fg-bold': '#ffffff',
+        fg: 'rgba(255,255,255,0.75)',
+        'fg-light': 'rgba(255,255,255,0.5)',
+        'fg-lighter': 'rgba(255,255,255,0.15)',
+        border: 'rgba(255,255,255,0.3)',
+        'border-bg': 'rgba(255,255,255,0.075)',
+        border2: 'rgba(255,255,255,0.5)',
+        'border2-bg': 'rgba(255,255,255,0.25)',
+        accent1: '#e44c65',
+        accent2: '#272833',
+        'accent2-transparent': 'rgba(39,40,51,0.965)',
+        accent3: '#5480f1',
+        accent4: '#39c088'
+      },
+      backgroundColor: {
+        bg: '#1c1d26',
+        'bg-transparent': 'rgba(23,24,32,0.95)',
+        'border-bg': 'rgba(255,255,255,0.075)',
+        'border2-bg': 'rgba(255,255,255,0.25)'
+      },
+      borderColor: {
+        border: 'rgba(255,255,255,0.3)',
+        border2: 'rgba(255,255,255,0.5)',
+        accent1: '#e44c65',
+        accent2: '#272833',
+        'accent2-transparent': 'rgba(39,40,51,0.965)',
+        accent3: '#5480f1',
+        accent4: '#39c088'
+      },
+      accentColor: {
+        accent1: '#e44c65',
+        accent2: '#272833',
+        'accent2-transparent': 'rgba(39,40,51,0.965)',
+        accent3: '#5480f1',
+        accent4: '#39c088'
+      },
+      divideColor: ({ theme }) => ({
+        ...theme('borderColor')
+      }),
+      textColor: {
+        'fg-bold': '#ffffff',
+        fg: 'rgba(255,255,255,0.75)',
+        'fg-light': 'rgba(255,255,255,0.5)',
+        'fg-lighter': 'rgba(255,255,255,0.15)'
+      }
     },
-    backgroundColor: {
-      bg: '#1c1d26',
-      'bg-transparent': 'rgba(23,24,32,0.95)',
-      'border-bg': 'rgba(255,255,255,0.075)',
-      'border2-bg': 'rgba(255,255,255,0.25)'
-    },
-    borderColor: {
-      border: 'rgba(255,255,255,0.3)',
-      border2: 'rgba(255,255,255,0.5)'
-    },
-    accentColor: {
-      accent1: '#e44c65',
-      accent2: '#272833',
-      'accent2-transparent': 'rgba(39,40,51,0.965)',
-      accent3: '#5480f1',
-      accent4: '#39c088'
-    },
-    divideColor: ({ theme }) => ({
-      ...theme('borderColor')
-    }),
-    textColor: {
-      'fg-bold': '#ffffff',
-      fg: 'rgba(255,255,255,0.75)',
-      'fg-light': 'rgba(255,255,255,0.5)',
-      'fg-lighter': 'rgba(255,255,255,0.15)'
-    },
-    // },
     aspectRatio: {
       auto: 'auto',
       square: '1 / 1',

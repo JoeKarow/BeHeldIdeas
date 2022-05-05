@@ -8,3 +8,5 @@ public
 
 # PNPM ignore package-lock
 package-lock.json
+
+workspace.code-workspace

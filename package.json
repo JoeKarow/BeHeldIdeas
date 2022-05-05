@@ -10,11 +10,12 @@
   "prettier": "prettier-config-standard",
   "scripts": {
     "develop": "NODE_ENV=development gatsby clean && gatsby develop --inspect",
-    "start": "npm-run-all --parallel develop netlifyproxy",
+    "start": "npm-run-all --parallel develop netlifyproxy indexGenerator",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "netlifyproxy": "netlify-cms-proxy-server"
+    "netlifyproxy": "netlify-cms-proxy-server",
+    "indexGenerator": "vscode-generate-index-standalone ./src/workers/*.js* ./src/components/**.js* ./utils/*.js* --watch=true"
   },
   "dependencies": {
     "@apollo/client": "~3.2.5 || ~3.3.0",
@@ -75,13 +76,13 @@
     "remark-mdx": "^2.1.1",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.51.0",
-    "styled-components": "^5.3.5",
     "tailwindcss": "^3.0.24",
     "typescript": ">=2.8.0",
     "webpack": ">=5.20.0 <6.0.0"
   },
   "devDependencies": {
-    "pnpm": "^7.0.0"
+    "pnpm": "^7.0.0",
+    "vscode-generate-index-standalone": "^1.6.0"
   },
   "packageManager": "pnpm@7.0.0"
 }
