@@ -7,7 +7,7 @@
   "keywords": [
     "gatsby"
   ],
-    "prettier": "prettier-config-standard",
+  "prettier": "prettier-config-standard",
   "scripts": {
     "develop": "NODE_ENV=development gatsby clean && gatsby develop --inspect",
     "start": "npm-run-all --parallel develop netlifyproxy indexGenerator",
@@ -24,6 +24,7 @@
     "@iconify/react": "^3.2.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@netlify/plugin-gatsby": "^3.0.0",
     "@parcel/core": "^2.5.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
