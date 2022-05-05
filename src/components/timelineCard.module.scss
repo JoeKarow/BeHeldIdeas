@@ -1,0 +1,31 @@
+.timelineCard {
+  div {
+    @apply shadow-lg #{!important};
+    @apply bg-bg-transparent;
+    h2 {
+      @apply text-fg-bold font-bold text-3xl;
+    }
+    h3 {
+      @apply text-fg text-xl italic;
+    }
+    @apply text-fg text-base;
+    li {
+      @apply list-disc list-inside;
+    }
+    .timelineDate {
+      @apply text-xl #{!important};
+    }
+  }
+}
+.timelineIcon {
+  box-shadow: 0 0 2px 3px theme('colors.accent1'),
+    0 3px 0 4px rgba(0, 0, 0, 0.45);
+  @apply flex justify-center items-center;
+  @apply bg-accent1 bg-opacity-75;
+}
+:global {
+  .iconify {
+    @apply w-5/6 h-5/6 left-0 top-0 m-0 #{!important};
+    @apply mix-blend-hard-light;
+  }
+}

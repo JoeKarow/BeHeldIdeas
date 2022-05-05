@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
-import Footer from './section/Footer'
-import Navbar from './section/Navbar'
-import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 import { ParallaxProvider } from 'react-scroll-parallax'
+
+import { Footer, Navbar } from './'
+import { useSiteMetadata } from '../workers'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()

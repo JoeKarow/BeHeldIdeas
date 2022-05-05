@@ -1,23 +1,23 @@
-import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 import { VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
+import * as styles from './timelineCard.module.scss'
+import { Icon } from '@iconify/react'
 
-export const TimelineCard = ({
-  itemOptions: {
-    dateInnerStyle: { background, color }
-  },
-  dateText,
-  heading,
-  subheading,
-  body
-}) => {
+const TimelineCard = ({ date, icon, heading, subheading, body }) => {
   return (
-    <VerticalTimelineElement date={dateText}>
+    <VerticalTimelineElement
+      date={date}
+      className={styles.timelineCard}
+      dateClassName={styles.timelineDate}
+      icon={<Icon icon={icon} />}
+      iconClassName={styles.timelineIcon}>
       <h2>{heading}</h2>
       <h3>{subheading}</h3>
-      <MDXProvider>{body}</MDXProvider>
+      <MDXRenderer>{body}</MDXRenderer>
     </VerticalTimelineElement>
   )
 }
 // @refresh reset
+export default TimelineCard
