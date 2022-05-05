@@ -1,14 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link as ScrollLink } from 'react-scroll'
-import { Link } from 'gatsby'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link as ScrollLink } from "react-scroll";
+import { Link } from "gatsby";
 
-const FeatureRight = ({
+function FeatureRight({
   thisSectionId,
   nextSectionId,
   featureImage,
-  featureImageAlt = ''
-}) => {
+  featureImageAlt = ""
+}) {
   return (
     <section id={thisSectionId} className="spotlight style2 right">
       <span className="image fit main">
@@ -37,14 +37,14 @@ const FeatureRight = ({
         to={nextSectionId}
         className="goto-next"
         activeClass="active"
-        smooth={true}
+        smooth
         offset={0}
         duration={1000}
-        spy={true}
+        spy
         title="Next"
       />
     </section>
-  )
+  );
 }
 
 FeatureRight.propTypes = {
@@ -52,6 +52,6 @@ FeatureRight.propTypes = {
   nextSectionId: PropTypes.string.isRequired,
   featureImage: PropTypes.string.isRequired,
   featureImageAlt: PropTypes.string.isRequired
-}
+};
 
-export default FeatureRight
+export default FeatureRight;

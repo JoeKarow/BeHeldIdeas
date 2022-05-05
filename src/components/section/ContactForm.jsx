@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const ContactForm = () => {
+function ContactForm() {
   return (
     <section id="contact" className="wrapper special fade">
       <div className="container">
@@ -34,10 +34,7 @@ const ContactForm = () => {
               />
             </div>
             <div className="col-12 md:py-5">
-              <textarea
-                name="message"
-                required
-                placeholder="Message"></textarea>
+              <textarea name="message" required placeholder="Message" />
             </div>
             <div className="col-12">
               <input type="submit" value="Send Message" />
@@ -46,7 +43,7 @@ const ContactForm = () => {
         </form>
       </div>
     </section>
-  )
+  );
 }
 
-export default ContactForm
+export default ContactForm;

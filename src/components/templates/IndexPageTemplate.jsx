@@ -1,11 +1,11 @@
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import React from 'react'
-import { Hero, ShowcaseTop } from '../'
+import { MDXProvider } from "@mdx-js/react";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import React from "react";
+import { Hero, ShowcaseTop } from "..";
 
-const IndexPageTemplate = ({ hero, about, mdx }, body) => {
+function IndexPageTemplate({ hero, about, mdx }, body) {
   // debugger
-  console.log(mdx)
+  console.log(mdx);
   return (
     <>
       <Hero
@@ -39,7 +39,7 @@ const IndexPageTemplate = ({ hero, about, mdx }, body) => {
         nextSectionId="three"
       />
     </>
-  )
+  );
 }
 
-export default IndexPageTemplate
+export default IndexPageTemplate;

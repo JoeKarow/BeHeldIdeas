@@ -1,7 +1,9 @@
-const path = require('path')
-const cmsJsonSettings = require('./src/data/settings/settings.json')
+/** @format */
 
-const { siteMetadata } = cmsJsonSettings
+const path = require('path');
+const cmsJsonSettings = require('./src/data/settings/settings.json');
+
+const { siteMetadata } = cmsJsonSettings;
 // const siteMetadata = {
 //   title: 'html5up-landed-gatsby',
 //   siteUrl: 'https://www.yourdomain.tld',
@@ -12,37 +14,37 @@ const sourceFilesystemList = [
     resolve: 'gatsby-source-filesystem',
     options: {
       name: 'uploads',
-      path: `${__dirname}/static/img`
+      path: `${__dirname}/static/img`,
     },
-    __key: 'uploads'
+    __key: 'uploads',
   },
   // pages
   {
     resolve: 'gatsby-source-filesystem',
     options: {
       name: 'pages',
-      path: `${__dirname}/src/pages`
+      path: `${__dirname}/src/pages`,
     },
-    __key: 'pages'
+    __key: 'pages',
   },
   // cms data files
   {
     resolve: 'gatsby-source-filesystem',
     options: {
       name: 'data',
-      path: `${__dirname}/src/data`
+      path: `${__dirname}/src/data`,
     },
-    __key: 'jsonData'
+    __key: 'jsonData',
   },
   // images
   {
     resolve: 'gatsby-source-filesystem',
     options: {
       name: 'srcImages',
-      path: `${__dirname}/src/images`
+      path: `${__dirname}/src/images`,
     },
-    __key: 'srcImages'
-  }
+    __key: 'srcImages',
+  },
   // {
   //   resolve: `gatsby-graphql-sharp`,
   //   options: {
@@ -53,7 +55,7 @@ const sourceFilesystemList = [
   //     ]
   //   }
   // }
-]
+];
 const pluginImageSharp = {
   resolve: 'gatsby-plugin-sharp',
   options: {
@@ -62,7 +64,7 @@ const pluginImageSharp = {
       placeholder: 'blurred',
       quality: 50,
       breakpoints: [750, 1080, 1366, 1920],
-      backgroundColor: 'transparent'
+      backgroundColor: 'transparent',
       // tracedSVGOptions: {},
       // blurredOptions: {},
       // jpgOptions: {},
@@ -70,9 +72,9 @@ const pluginImageSharp = {
       // webpOptions: {},
       // avifOptions: {}
     },
-    stripMetadata: true
-  }
-}
+    stripMetadata: true,
+  },
+};
 const pluginMdx = {
   resolve: 'gatsby-plugin-mdx',
   options: {
@@ -81,15 +83,15 @@ const pluginMdx = {
       {
         resolve: 'gatsby-remark-copy-linked-files',
         options: {
-          destinationDir: 'uploads'
-        }
+          destinationDir: 'uploads',
+        },
       },
       {
         resolve: 'gatsby-remark-relative-images',
         options: {
           staticFolderName: 'static/img',
-          name: 'uploads'
-        }
+          name: 'uploads',
+        },
       },
       {
         resolve: 'gatsby-remark-images',
@@ -97,47 +99,47 @@ const pluginMdx = {
           // It's important to specify the maxWidth (in pixels) of
           // the content container as this plugin uses this as the
           // base for generating different widths of each image.
-          maxWidth: 2048
-        }
+          maxWidth: 2048,
+        },
       },
       {
-        resolve: 'gatsby-remark-external-links'
-      }
-    ]
-  }
-}
+        resolve: 'gatsby-remark-external-links',
+      },
+    ],
+  },
+};
 
 const pluginNetlifyCMS = {
   resolve: 'gatsby-plugin-netlify-cms',
   options: {
     manualInit: true,
-    modulePath: `${__dirname}/src/cms/index.js`
-  }
-}
+    modulePath: `${__dirname}/src/cms/index.js`,
+  },
+};
 const pluginCSS = {
   resolve: 'gatsby-plugin-sass',
   options: {
     // useResolveUrlLoader: true,
-    postCssPlugins: []
+    postCssPlugins: [],
     // sassOptions: {
     //   indentedSyntax: false,
     //   includePaths: ['./src/css', './src/css/libs'],
     // },
-  }
-}
+  },
+};
 
 const webpackAnalyze = {
   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
   options: {
-    devMode: true
-  }
-}
+    devMode: true,
+  },
+};
 
 const pluginPnpm = {
   resolve: 'gatsby-plugin-pnpm',
   options: {
     include: [
-      'mini-css-extract-plugin'
+      'mini-css-extract-plugin',
       //   'prop-types',
       //   'query-string',
       //   'lodash/merge',
@@ -145,19 +147,36 @@ const pluginPnpm = {
       //   '@gatsbyjs/reach-router/lib/utils',
       //   'gatsby-link',
       //   'gatsby-react-router-scroll'
-    ]
+    ],
     // projectPath: path.dirname(__dirname)
-  }
-}
+  },
+};
 
 const pluginPageCreator = {
-  //fixes the issue where initial MDX builds are blank
+  // fixes the issue where initial MDX builds are blank
   resolve: 'gatsby-plugin-page-creator',
   options: {
     path: `${__dirname}/src/pages`,
-    ignore: [`**/*.mdx`, `**.*.md`]
-  }
-}
+    ignore: ['**/*.mdx', '**.*.md'],
+  },
+};
+const gatsbyRequiredRules = path.join(
+  process.cwd(),
+  'node_modules',
+  'gatsby',
+  'dist',
+  'utils',
+  'eslint-rules',
+);
+const pluginEslint = {
+  resolve: 'gatsby-plugin-eslint',
+  rulePaths: [gatsbyRequiredRules],
+  stages: ['develop'],
+  extensions: ['js', 'jsx', 'ts', 'tsx'],
+  exclude: ['node_modules', 'bower_components', '.cache', 'public'],
+  // Any additional eslint-webpack-plugin options below
+  // ...
+};
 
 const plugins = [
   ...sourceFilesystemList,
@@ -176,11 +195,12 @@ const plugins = [
   pluginNetlifyCMS,
   pluginPageCreator,
   pluginPnpm,
-  //keep this last
-  'gatsby-plugin-netlify'
-]
+  pluginEslint,
+  // keep this last
+  'gatsby-plugin-netlify',
+];
 
 module.exports = {
-  siteMetadata: siteMetadata,
-  plugins: plugins
-}
+  siteMetadata,
+  plugins,
+};

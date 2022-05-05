@@ -1,20 +1,19 @@
-import React from 'react'
-import { Link as ScrollLink } from 'react-scroll'
-import PropTypes from 'prop-types'
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { ParallaxBanner } from 'react-scroll-parallax'
-import { convertToBgImage } from 'gbimage-bridge'
+import React from "react";
+import { Link as ScrollLink } from "react-scroll";
+import PropTypes from "prop-types";
+import { MDXProvider } from "@mdx-js/react";
 
-const ShowcaseTop = ({
+import { ParallaxBanner } from "react-scroll-parallax";
+import { convertToBgImage } from "gbimage-bridge";
+
+function ShowcaseTop({
   thisSectionId,
   nextSectionId,
   coverImage,
-  coverImageAlt = '',
   heading,
   subheading,
   body
-}) => {
+}) {
   // console.log(body)
 
   return (
@@ -54,25 +53,29 @@ const ShowcaseTop = ({
         className="goto-next"
         activeClass="active"
         // style={{ border: 'solid 10px red !important' }}
-        smooth={true}
+        smooth
         offset={0}
         duration={1000}
-        spy={true}
+        spy
         title="Next"
       />
 
       {/* </BackgroundImage> */}
     </section>
-  )
+  );
 }
 
 ShowcaseTop.propTypes = {
-  thisSectionId: PropTypes.string.isRequired,
+  body: PropTypes.string,
+  coverImage: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      gatsbyImageData: PropTypes.arrayOf
+    })
+  }),
+  heading: PropTypes.string,
   nextSectionId: PropTypes.string.isRequired,
-  coverImage: PropTypes.object.isRequired,
-  coverImageAlt: PropTypes.string.isRequired,
-  content1: PropTypes.string,
-  content2: PropTypes.string
-}
+  subheading: PropTypes.string,
+  thisSectionId: PropTypes.string.isRequired
+};
 
-export default ShowcaseTop
+export default ShowcaseTop;

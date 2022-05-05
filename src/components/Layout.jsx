@@ -1,14 +1,13 @@
-import * as React from 'react'
-import { Helmet } from 'react-helmet'
-import { withPrefix } from 'gatsby'
-import { ParallaxProvider } from 'react-scroll-parallax'
+import * as React from "react";
+import { Helmet } from "react-helmet";
+import { withPrefix } from "gatsby";
+import { ParallaxProvider } from "react-scroll-parallax";
 
-import { Footer, Navbar } from './'
-import { useSiteMetadata } from '../workers'
+import { Footer, Navbar } from ".";
+import { useSiteMetadata } from "../workers";
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
-  console.log('layout component')
+function TemplateWrapper({ children }) {
+  const { title, description } = useSiteMetadata();
   return (
     <>
       <Helmet>
@@ -19,24 +18,24 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${withPrefix('/')}img/apple-touch-icon.png`}
+          href={`${withPrefix("/")}img/apple-touch-icon.png`}
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-32x32.png`}
+          href={`${withPrefix("/")}img/favicon-32x32.png`}
           sizes="32x32"
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-16x16.png`}
+          href={`${withPrefix("/")}img/favicon-16x16.png`}
           sizes="16x16"
         />
 
         <link
           rel="mask-icon"
-          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
+          href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
@@ -46,14 +45,14 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta
           property="og:image"
-          content={`${withPrefix('/')}img/og-image.jpg`}
+          content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
       <Navbar />
       <ParallaxProvider>{children}</ParallaxProvider>
       <Footer />
     </>
-  )
+  );
 }
 
-export default TemplateWrapper
+export default TemplateWrapper;

@@ -1,23 +1,18 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import { graphql } from 'gatsby'
-import { TimelinePageTemplate } from '../components'
+import PropTypes from "prop-types";
+import React from "react";
+import { graphql } from "gatsby";
+import { TimelinePageTemplate } from "../components";
 
-const ResumePage = ({ data }) => {
-  const { items, timelineOptions } = data.mdx.frontmatter
+function ResumePage({ data }) {
+  const { items, timelineOptions } = data.mdx.frontmatter;
 
   return (
-    <>
-      <div className="wrapper style1">
-        <section className="content container">
-          <TimelinePageTemplate
-            timelineOptions={timelineOptions}
-            items={items}
-          />
-        </section>
-      </div>
-    </>
-  )
+    <div className="wrapper style1">
+      <section className="content container">
+        <TimelinePageTemplate timelineOptions={timelineOptions} items={items} />
+      </section>
+    </div>
+  );
 }
 
 ResumePage.propTypes = {
@@ -29,8 +24,8 @@ ResumePage.propTypes = {
       })
     })
   })
-}
-export default ResumePage
+};
+export default ResumePage;
 export const query = graphql`
   query ResumePageQuery($slug: String!) {
     mdx(slug: { eq: $slug }) {
@@ -57,4 +52,4 @@ export const query = graphql`
       slug
     }
   }
-`
+`;

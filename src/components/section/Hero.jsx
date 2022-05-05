@@ -1,16 +1,16 @@
-import React from 'react'
-import { Link as ScrollLink } from 'react-scroll'
-import { PreviewCompatibleImage } from '../'
+import React from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { PreviewCompatibleImage } from "..";
 
-const Hero = ({
+function Hero({
   thisSectionId,
   nextSectionId,
   heading,
   subheading,
   image,
-  alt = ''
-}) => {
-  const imgInfo = { image, alt }
+  alt = ""
+}) {
+  const imgInfo = { image, alt };
   return (
     <section id={thisSectionId} className="banner">
       <div className="content">
@@ -26,14 +26,14 @@ const Hero = ({
         to={nextSectionId}
         className="goto-next animate-bounce"
         activeClass="active"
-        smooth={true}
+        smooth
         offset={0}
         duration={1000}
-        spy={true}
+        spy
         title="Next"
       />
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import React from "react";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
-const Navbar = () => {
+function Navbar() {
   const { settingsJson, navigationJson } = useStaticQuery(graphql`
     {
       settingsJson {
@@ -16,15 +16,13 @@ const Navbar = () => {
         }
       }
     }
-  `)
-  const li = navigationJson.items.map(navitem => {
-    return (
-      <li key={navitem.text}>
-        <Link to={navitem.url}>{navitem.text}</Link>
-      </li>
-    )
-  })
-  const { title } = settingsJson.siteMetadata
+  `);
+  const li = navigationJson.items.map((navitem) => (
+    <li key={navitem.text}>
+      <Link to={navitem.url}>{navitem.text}</Link>
+    </li>
+  ));
+  const { title } = settingsJson.siteMetadata;
   return (
     <header id="header">
       <h1 id="logo">
@@ -34,7 +32,7 @@ const Navbar = () => {
         <ul>{li}</ul>
       </nav>
     </header>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

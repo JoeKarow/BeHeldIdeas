@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 // import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby";
 
-import { IndexPageTemplate } from '../components'
+import { IndexPageTemplate } from "../components";
 
-const IndexPage = ({ data }) => {
+function IndexPage({ data }) {
   // console.log(data.mdx)
-  const { mdx } = data
-  const { hero, about } = data.mdx.frontmatter
+  const { mdx } = data;
+  const { hero, about } = data.mdx.frontmatter;
   // console.log(hero)
   // console.log(about)
   // console.log(mdx)
@@ -18,10 +18,10 @@ const IndexPage = ({ data }) => {
       body={data.mdx.body}
       mdx={mdx}
     />
-  )
+  );
 }
 
-export default IndexPage
+export default IndexPage;
 
 export const query = graphql`
   query IndexPageQuery($id: String!) {
@@ -60,4 +60,4 @@ export const query = graphql`
       body
     }
   }
-`
+`;
