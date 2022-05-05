@@ -7,7 +7,7 @@ const TimelineCardList = ({ items }) => {
     return (
       <TimelineCard
         key={itemKey}
-        date={item.date}
+        date={item.dates}
         icon={item.icon}
         heading={item.heading}
         subheading={item.subheading}

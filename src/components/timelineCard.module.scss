@@ -14,6 +14,7 @@
     }
     .timelineDate {
       @apply text-xl #{!important};
+      @apply text-accent4;
     }
   }
 }

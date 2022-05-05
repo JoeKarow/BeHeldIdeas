@@ -6,6 +6,7 @@ import * as styles from './timelineCard.module.scss'
 import { Icon } from '@iconify/react'
 
 const TimelineCard = ({ date, icon, heading, subheading, body }) => {
+  console.log(date)
   return (
     <VerticalTimelineElement
       date={date}
