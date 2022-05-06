@@ -6,7 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { ParallaxBanner } from 'react-scroll-parallax'
 import { convertToBgImage } from 'gbimage-bridge'
 
-const ShowcaseTop = ({
+const SpotlightTop = ({
   thisSectionId,
   nextSectionId,
   coverImage,
@@ -66,7 +66,7 @@ const ShowcaseTop = ({
   )
 }
 
-ShowcaseTop.propTypes = {
+SpotlightTop.propTypes = {
   thisSectionId: PropTypes.string.isRequired,
   nextSectionId: PropTypes.string.isRequired,
   coverImage: PropTypes.object.isRequired,
@@ -75,4 +75,4 @@ ShowcaseTop.propTypes = {
   content2: PropTypes.string
 }
 
-export default ShowcaseTop
+export default SpotlightTop
