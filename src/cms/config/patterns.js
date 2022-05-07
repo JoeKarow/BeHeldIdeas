@@ -1,10 +1,10 @@
 import { stringField, textField, objectField, hiddenField } from './fields'
 
-export const collectionDefaults = (label, name) => ({
+export const collectionDefaults = (label, name, preview = false) => ({
   label,
   name,
   editor: {
-    preview: false
+    preview
   }
 })
 
