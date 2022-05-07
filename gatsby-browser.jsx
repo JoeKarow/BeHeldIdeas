@@ -6,6 +6,7 @@ import { BreakpointProvider, setDefaultBreakpoints } from 'react-socks'
 import Layout from './src/components/Layout'
 import { MDXProvider } from '@mdx-js/react'
 import { SocialLinks } from './src/components'
+import * as mdxShortcodes from './src/components'
 
 // React-Socks Breakpoints
 setDefaultBreakpoints([
@@ -14,11 +15,6 @@ setDefaultBreakpoints([
   { lg: '981px' },
   { xl: '1281px' }
 ])
-
-// MDX Components
-const mdxShortcodes = {
-  SocialLinks
-}
 
 export const wrapRootElement = ({ element }) => {
   return (

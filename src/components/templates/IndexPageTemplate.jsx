@@ -1,5 +1,3 @@
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 import { Hero, SpotlightTop } from '../'
 
@@ -16,10 +14,6 @@ const IndexPageTemplate = ({ hero, about, mdx }, body) => {
         thisSectionId="one"
         nextSectionId="two"
       />
-      <MDXProvider>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
-      </MDXProvider>
-      {/* <MDXRenderer>{mdx.mdxAST}</MDXRenderer> */}
       <SpotlightTop
         coverImage={about.image}
         coverImageAlt={about.imgAlt}
