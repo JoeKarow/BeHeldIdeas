@@ -12,6 +12,7 @@ specifiers:
   '@react-spring/web': ^9.4.5
   '@tailwindcss/aspect-ratio': ^0.4.0
   '@tailwindcss/typography': ^0.5.2
+  '@types/mdx': ^2.0.1
   '@types/react': '>=16.3.0 <17.0.0 || >=17.0.0 <18.0.0'
   ajv: ^8.8.2
   autoprefixer: ^10.4.5
@@ -81,6 +82,7 @@ dependencies:
   '@react-spring/web': 9.4.5_sfoxds7t5ydpegc3knd667wn6m
   '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.24
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
+  '@types/mdx': 2.0.1
   '@types/react': 17.0.45
   autoprefixer: 10.4.7_postcss@8.4.13
   babel-eslint: 10.1.0_eslint@8.15.0
@@ -3628,6 +3630,10 @@ packages:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
       '@types/unist': 2.0.6
+    dev: false
+
+  /@types/mdx/2.0.1:
+    resolution: {integrity: sha512-JPEv4iAl0I+o7g8yVWDwk30es8mfVrjkvh5UeVR2sYPpZCK44vrAPsbJpIS+rJAUxLgaSAMKTEH5Vn5qd9XsrQ==}
     dev: false
 
   /@types/minimatch/3.0.5:

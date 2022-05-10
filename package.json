@@ -15,7 +15,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "netlifyproxy": "netlify-cms-proxy-server",
-    "indexGenerator": "vscode-generate-index-standalone ./src/workers/*.js* ./src/components/**.js* ./utils/*.js* --watch=true"
+    "indexGenerator": "vscode-generate-index-standalone ./src/workers/ ./src/components/ ./utils/ --watch=true"
   },
   "dependencies": {
     "@apollo/client": "~3.2.5 || ~3.3.0",
@@ -29,6 +29,7 @@
     "@react-spring/web": "^9.4.5",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
+    "@types/mdx": "^2.0.1",
     "@types/react": ">=16.3.0 <17.0.0 || >=17.0.0 <18.0.0",
     "autoprefixer": "^10.4.5",
     "babel-eslint": "^10.1.0",

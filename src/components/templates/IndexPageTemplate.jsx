@@ -1,5 +1,11 @@
 import React from 'react'
-import { Hero, SpotlightTop, SpotlightLeft, SpotlightRight } from '../'
+import {
+  Hero,
+  SpotlightTop,
+  SpotlightLeft,
+  SpotlightRight,
+  Spotlight
+} from '../'
 
 const IndexPageTemplate = ({ data: { mdx } }) => {
   const {
@@ -17,7 +23,8 @@ const IndexPageTemplate = ({ data: { mdx } }) => {
         thisSectionId="one"
         nextSectionId="two"
       />
-      <SpotlightTop
+      <Spotlight
+        layout="bottom"
         coverImage={about.image}
         coverImageAlt={about.imgAlt}
         heading={about.heading}
@@ -26,23 +33,25 @@ const IndexPageTemplate = ({ data: { mdx } }) => {
         thisSectionId="two"
         nextSectionId="three"
       />
-      <SpotlightLeft
+      <Spotlight
+        layout="left"
         coverImage={spotleft.image}
         coverImageAlt={spotleft.imgAlt}
         heading={spotleft.heading}
         subheading={spotleft.subheading}
         body={spotleft.content}
         thisSectionId="three"
-        nextSectionId="three"
+        nextSectionId="four"
       />
-      <SpotlightRight
+      <Spotlight
+        layout="right"
         coverImage={spotright.image}
         coverImageAlt={spotright.imgAlt}
         heading={spotright.heading}
         subheading={spotright.subheading}
         body={spotright.content}
-        thisSectionId="three"
-        nextSectionId="three"
+        thisSectionId="four"
+        nextSectionId="five"
       />
     </>
   )
