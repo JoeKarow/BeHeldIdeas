@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import PropTypes from 'prop-types'
-import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { ParallaxBanner } from 'react-scroll-parallax'
 import { convertToBgImage } from 'gbimage-bridge'
@@ -36,8 +35,7 @@ const SpotlightLeft = ({
                 </div>
 
                 <div className="prose-neutral">
-                  {/* <MDXRenderer>{body}</MDXRenderer> */}
-                  <MDXProvider>{body}</MDXProvider>
+                  <MDXRenderer>{body}</MDXRenderer>
                 </div>
               </div>
             ),

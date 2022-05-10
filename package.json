@@ -25,6 +25,8 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@parcel/core": "^2.5.0",
+    "@react-spring/parallax": "^9.4.5",
+    "@react-spring/web": "^9.4.5",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "@types/react": ">=16.3.0 <17.0.0 || >=17.0.0 <18.0.0",
@@ -36,6 +38,7 @@
     "gatsby-plugin-graphql-config": "^1.13.0",
     "gatsby-plugin-image": "^2.13.0",
     "gatsby-plugin-mdx": "^3.13.0",
+    "gatsby-plugin-mdx-frontmatter": "^0.0.4",
     "gatsby-plugin-netlify": "^4.3.1",
     "gatsby-plugin-netlify-cms": "^6.13.0",
     "gatsby-plugin-page-data-preview": "^1.2.1",
@@ -81,6 +84,7 @@
     "webpack": ">=5.20.0 <6.0.0"
   },
   "devDependencies": {
+    "ajv": "^8.8.2",
     "pnpm": "^7.0.0",
     "vscode-generate-index-standalone": "^1.6.0"
   },

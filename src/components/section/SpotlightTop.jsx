@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import PropTypes from 'prop-types'
-import { MDXProvider } from '@mdx-js/react'
-// import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { ParallaxBanner } from 'react-scroll-parallax'
 import { convertToBgImage } from 'gbimage-bridge'
 
@@ -39,7 +38,7 @@ const SpotlightTop = ({
                     </div>
                   </div>
                   <div className="lg:col-end-2 lg:columns-2 lg:break-inside-auto lg:basis-2/3">
-                    <MDXProvider>{body}</MDXProvider>
+                    <MDXRenderer>{body}</MDXRenderer>
                   </div>
                 </div>
               </div>

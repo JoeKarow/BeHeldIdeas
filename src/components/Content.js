@@ -6,12 +6,9 @@ export const HTMLContent = ({ content, className }) => (
   <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
 )
 
-export class MDXContent extends React.Component {
-  render() {
-    console.log('i am running')
-    return <MDXRenderer>{this.props.content}</MDXRenderer>
-  }
-}
+export const MDXContent = ({ content, className }) => (
+  <MDXRenderer>{content}</MDXRenderer>
+)
 
 const Content = ({ content, className }) => {
   console.log('i am the captain now')

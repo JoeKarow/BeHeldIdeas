@@ -170,6 +170,7 @@ const plugins = [
   'gatsby-transformer-json',
   'gatsby-plugin-graphql-config',
   'gatsby-plugin-page-data-preview',
+  // 'gatsby-plugin-mdx-frontmatter',
   pluginMdx,
   pluginImageSharp,
   pluginCSS,

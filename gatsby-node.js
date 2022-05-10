@@ -43,7 +43,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const pages = result.data.allMdx.nodes
 
-  pages.forEach(page => {
+  pages.forEach((page) => {
     if (page.frontmatter.generate) {
       actions.createPage({
         path: `/${page.slug}`,
@@ -117,6 +117,17 @@ exports.createSchemaCustomization = ({
 
     type MdxFrontmatterItems {
       body: String @mdx
+    }
+    type MdxFrontmatterAbout {
+      content: String @mdx
+    }
+
+    type MdxFrontmatterSpotleft {
+      content: String @mdx
+    }
+
+    type MdxFrontmatterSpotright {
+      content: String @mdx
     }
   `)
 }
