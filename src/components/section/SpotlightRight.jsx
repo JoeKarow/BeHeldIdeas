@@ -1,46 +1,42 @@
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import PropTypes from 'prop-types'
 import { MDXProvider } from '@mdx-js/react'
-// import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { ParallaxBanner } from 'react-scroll-parallax'
 import { convertToBgImage } from 'gbimage-bridge'
+import { MDXContent } from '../Content'
 
-const SpotlightTop = ({
+const SpotlightRight = ({
   thisSectionId,
   nextSectionId,
   coverImage,
-  coverImageAlt = '',
   heading,
   subheading,
   body
 }) => {
-  // console.log(body)
-
   return (
     <section id={thisSectionId} className="">
       <ParallaxBanner
-        className="spotlight style1 bottom"
-        // style={{ aspectRatio: '2 / 1' }}
+        className="spotlight style1 right"
         layers={[
           {
             image: convertToBgImage(coverImage.childImageSharp.gatsbyImageData)
               .fluid.src,
-            speed: 40
+            speed: 30
           },
           {
             children: (
-              <div className="content">
-                <div className="container lg:flex lg:gap-x-7">
-                  <div className="lg:basis-1/3 lg:my-auto">
-                    <div className="lg:w-fit lg:mx-auto">
-                      <h2 className="text-3xl">{heading}</h2>
-                      <h3 className="text-lg">{subheading}</h3>
-                    </div>
-                  </div>
-                  <div className="lg:col-end-2 lg:columns-2 lg:break-inside-auto lg:basis-2/3">
-                    <MDXProvider>{body}</MDXProvider>
-                  </div>
+              <div className="content flex flex-col">
+                <div className="py-7">
+                  <h2 className="text-3xl">{heading}</h2>
+                  <h3 className="text-2xl leading-loose">{subheading}</h3>
+                </div>
+
+                <div className="prose-neutral">
+                  {/* <MDXRenderer>{body}</MDXRenderer> */}
+                  {/* <MDXContent content={body} /> */}
+                  <MDXProvider>{body}</MDXProvider>
                 </div>
               </div>
             ),
@@ -60,13 +56,11 @@ const SpotlightTop = ({
         spy={true}
         title="Next"
       />
-
-      {/* </BackgroundImage> */}
     </section>
   )
 }
 
-SpotlightTop.propTypes = {
+SpotlightRight.propTypes = {
   thisSectionId: PropTypes.string.isRequired,
   nextSectionId: PropTypes.string.isRequired,
   coverImage: PropTypes.object.isRequired,
@@ -75,4 +69,4 @@ SpotlightTop.propTypes = {
   content2: PropTypes.string
 }
 
-export default SpotlightTop
+export default SpotlightRight

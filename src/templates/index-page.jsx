@@ -7,16 +7,19 @@ import { IndexPageTemplate } from '../components'
 const IndexPage = ({ data }) => {
   // console.log(data.mdx)
   const { mdx } = data
-  const { hero, about } = data.mdx.frontmatter
+  const { hero, about, spotleft } = data.mdx.frontmatter
   // console.log(hero)
   // console.log(about)
   // console.log(mdx)
+
   return (
     <IndexPageTemplate
-      hero={hero}
-      about={about}
-      body={data.mdx.body}
-      mdx={mdx}
+      // hero={hero}
+      // about={about}
+      // spotleft={spotleft}
+      // body={data.mdx.body}
+      // mdx={mdx}
+      data={data}
     />
   )
 }
@@ -44,6 +47,28 @@ export const query = graphql`
           }
         }
         about {
+          subheading
+          imgAlt
+          heading
+          content
+          image {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+        }
+        spotleft {
+          subheading
+          imgAlt
+          heading
+          content
+          image {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+        }
+        spotright {
           subheading
           imgAlt
           heading

@@ -15,6 +15,14 @@ const aboutSectionFields = [
   stringField('Subheading', 'subheading', true),
   mdEditor('Blurb', 'content')
 ]
+const spotlightLeftFields = [
+  imageField('Featured Image', 'image', '../../static/img', false, true),
+  stringField('Image Alt Text', 'imgAlt', true),
+  stringField('Main heading', 'heading', true),
+  stringField('Subheading', 'subheading', true),
+  mdEditor('Blurb', 'content')
+]
+
 export const mainPage = {
   label: 'Main Page',
   name: 'main',
@@ -22,6 +30,8 @@ export const mainPage = {
   fields: [
     ...pageDefaults('index-page'),
     objectField('Top Section', 'hero', heroSectionFields, true),
-    objectField('About Section', 'about', aboutSectionFields, true)
+    objectField('About Section', 'about', aboutSectionFields, true),
+    objectField('Left Spotlight', 'spotleft', spotlightLeftFields, true),
+    objectField('Right Spotlight', 'spotright', spotlightLeftFields, true)
   ]
 }
