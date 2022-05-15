@@ -24,9 +24,8 @@
   @apply flex justify-center items-center;
   @apply bg-accent1 bg-opacity-75;
 }
-:global {
-  .iconify {
-    @apply w-5/6 h-5/6 left-0 top-0 m-0 #{!important};
-    @apply mix-blend-hard-light;
-  }
+
+.iconify {
+  @apply w-5/6 h-5/6 left-0 top-0 m-0 #{!important};
+  @apply mix-blend-hard-light;
 }

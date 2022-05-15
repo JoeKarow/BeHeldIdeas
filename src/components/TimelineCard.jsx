@@ -11,7 +11,7 @@ const TimelineCard = ({ date, icon, heading, subheading, body }) => {
       date={date}
       className={styles.timelineCard}
       dateClassName={styles.timelineDate}
-      icon={<Icon icon={icon} />}
+      icon={<Icon icon={icon} className={styles.iconify} />}
       iconClassName={styles.timelineIcon}>
       <h2>{heading}</h2>
       <h3>{subheading}</h3>
