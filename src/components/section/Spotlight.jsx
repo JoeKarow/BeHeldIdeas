@@ -9,6 +9,7 @@ const Spotlight = ({
   thisSectionId,
   nextSectionId,
   coverImage,
+  imgAlt,
   heading,
   subheading,
   body,
@@ -23,7 +24,7 @@ const Spotlight = ({
           {
             speed: -20,
             easing: 'ease',
-            children: <GatsbyImage image={image} />
+            children: <GatsbyImage image={image} alt={imgAlt} />
           },
           {
             speed: 0,
