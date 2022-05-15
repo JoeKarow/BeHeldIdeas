@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import { PreviewCompatibleImage } from '../'
+import * as styles from './hero.module.scss'
 
 const Hero = ({
   thisSectionId,
@@ -12,19 +13,19 @@ const Hero = ({
 }) => {
   const imgInfo = { image, alt }
   return (
-    <section id={thisSectionId} className="banner">
-      <div className="content">
-        <div className="header">
+    <section id={thisSectionId} className={styles.banner}>
+      <div className={styles.content}>
+        <div className={styles.header}>
           <h2>{heading}</h2>
           <p>{subheading}</p>
         </div>
-        <span className="image">
+        <span className={styles.image}>
           <PreviewCompatibleImage imageInfo={imgInfo} />
         </span>
       </div>
       <ScrollLink
         to={nextSectionId}
-        className="goto-next animate-bounce"
+        className={styles.gotoNext}
         activeClass="active"
         smooth={true}
         offset={0}
