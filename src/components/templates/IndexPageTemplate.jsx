@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Hero,
-  SpotlightTop,
-  SpotlightLeft,
-  SpotlightRight,
-  Spotlight
-} from '../'
+import { Hero, Spotlight } from '../'
 
 const IndexPageTemplate = ({ data: { mdx } }) => {
   const {
