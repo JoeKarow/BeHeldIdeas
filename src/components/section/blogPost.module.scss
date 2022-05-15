@@ -1,0 +1,188 @@
+@import '../../css/libs/index.scss';
+
+.wrapper {
+  padding: $size-wrapper-pad-tb 0 ($size-wrapper-pad-tb - _size(element-margin))
+    0;
+
+  &.style1 {
+  }
+
+  &.style2 {
+    background: _palette(accent1);
+
+    input[type='text'],
+    input[type='password'],
+    input[type='email'],
+    select,
+    textarea {
+      &:focus {
+        border-color: _palette(border2);
+      }
+    }
+
+    input[type='submit'],
+    input[type='reset'],
+    input[type='button'],
+    .button {
+      &:hover,
+      &:active {
+        background-color: _palette(border-bg) !important;
+        box-shadow: inset 0 0 0 1px _palette(border2) !important;
+        color: _palette(fg-bold) !important;
+      }
+
+      &:active {
+        background-color: _palette(border2-bg) !important;
+      }
+
+      &.primary {
+        background-color: _palette(fg-bold);
+        color: _palette(accent1) !important;
+
+        &:hover,
+        &:active {
+          background-color: _palette(border-bg) !important;
+          box-shadow: inset 0 0 0 1px _palette(border2) !important;
+          color: _palette(fg-bold) !important;
+        }
+
+        &:active {
+          background-color: _palette(border2-bg) !important;
+        }
+      }
+    }
+  }
+
+  &.fade-down {
+    > .container {
+      @include vendor('transform', 'translate(0,0)');
+      @include vendor('transition', 'transform 1s ease, opacity 1s ease');
+      opacity: 1;
+    }
+
+    &.inactive {
+      > .container {
+        @include vendor('transform', 'translate(0,-1em)');
+        opacity: 0;
+      }
+    }
+  }
+
+  &.fade-up {
+    > .container {
+      @include vendor('transform', 'translate(0,0)');
+      @include vendor('transition', 'transform 1s ease, opacity 1s ease');
+      opacity: 1;
+    }
+
+    &.inactive {
+      > .container {
+        @include vendor('transform', 'translate(0,1em)');
+        opacity: 0;
+      }
+    }
+  }
+
+  &.fade {
+    > .container {
+      @include vendor('transition', 'opacity 1s ease');
+      opacity: 1;
+    }
+
+    &.inactive {
+      > .container {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: calc(100% - #{_size(element-margin) * 2});
+  width: _size(container-width);
+
+  &.xsmall {
+    width: (_size(container-width) * 0.25);
+  }
+
+  &.small {
+    width: (_size(container-width) * 0.5);
+  }
+
+  &.medium {
+    width: (_size(container-width) * 0.75);
+  }
+
+  &.large {
+    width: (_size(container-width) * 1.25);
+  }
+
+  &.xlarge {
+    width: (_size(container-width) * 1.5);
+  }
+
+  &.max {
+    width: 100%;
+  }
+
+  //   @include breakpoint('<=large') {
+  //     width: 90%;
+  //     max-width: 100%;
+  //   }
+
+  //   @include breakpoint('<=medium') {
+  //     width: 100% !important;
+  //   }
+}
+
+.content {
+  @include vendor('transform', 'translate(0,0)');
+  @include vendor('transition', 'transform 1s ease, opacity 1s ease');
+  background: _palette(bg-transparent);
+  border-style: solid;
+  opacity: 1;
+  position: absolute;
+}
+.header {
+  p {
+    color: _palette(fg-bold);
+    position: relative;
+    margin: 0 0 (_size(element-margin) * 0.75) 0;
+  }
+
+  h2 + p {
+    font-size: 1.25em;
+    margin-top: (_size(element-margin) * -0.5);
+    line-height: 1.75em;
+  }
+
+  h3 + p {
+    font-size: 1.1em;
+    margin-top: (_size(element-margin) * -0.4);
+    line-height: 1.75em;
+  }
+
+  h4 + p,
+  h5 + p,
+  h6 + p {
+    font-size: 0.9em;
+    margin-top: (_size(element-margin) * -0.3);
+    line-height: 1.5em;
+  }
+
+  &.major {
+    margin: 0 0 (_size(element-margin) * 2) 0;
+    position: relative;
+    text-align: center;
+
+    &:after {
+      background: _palette(accent1);
+      content: '';
+      display: inline-block;
+      height: 0.2em;
+      max-width: 20em;
+      width: 75%;
+    }
+  }
+}

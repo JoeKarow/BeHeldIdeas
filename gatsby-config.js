@@ -25,6 +25,15 @@ const sourceFilesystemList = [
     },
     __key: 'pages'
   },
+  //posts
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      name: 'posts',
+      path: `${__dirname}/src/posts`
+    },
+    __key: 'posts'
+  },
   // cms data files
   {
     resolve: 'gatsby-source-filesystem',
