@@ -8,20 +8,8 @@ const IndexPage = ({ data }) => {
   // console.log(data.mdx)
   const { mdx } = data
   const { hero, about, spotleft } = data.mdx.frontmatter
-  // console.log(hero)
-  // console.log(about)
-  // console.log(mdx)
 
-  return (
-    <IndexPageTemplate
-      // hero={hero}
-      // about={about}
-      // spotleft={spotleft}
-      // body={data.mdx.body}
-      // mdx={mdx}
-      data={data}
-    />
-  )
+  return <IndexPageTemplate data={data} />
 }
 
 export default IndexPage
