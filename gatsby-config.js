@@ -61,7 +61,7 @@ const pluginImageSharp = {
       formats: ['auto', 'webp'],
       placeholder: 'blurred',
       quality: 50,
-      breakpoints: [750, 1080, 1366, 1920],
+      // breakpoints: [750, 1080, 1366, 1920],
       backgroundColor: 'transparent'
       // tracedSVGOptions: {},
       // blurredOptions: {},
