@@ -1,11 +1,23 @@
 import React from 'react'
-import { siteMetadata } from '../data/settings/settings.json'
 import * as styles from './copyright.module.scss'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const Copyright = () => {
+  const data = useStaticQuery(graphql`
+    {
+      settingsJson {
+        siteMetadata {
+          author
+        }
+      }
+    }
+  `)
+
   return (
     <ul className={styles.copyright}>
-      <li>&copy; {siteMetadata.author}. All rights reserved.</li>
+      <li>
+        &copy; {data.settingsJson.siteMetadata.author}. All rights reserved.
+      </li>
       <li>
         Development: <a href="https://joekarow.dev">JoeKarow.dev</a>
       </li>
