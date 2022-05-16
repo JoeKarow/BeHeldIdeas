@@ -3,8 +3,7 @@ import { Hero, Spotlight } from '../'
 
 const IndexPageTemplate = ({ data: { mdx } }) => {
   const {
-    frontmatter: { hero, about, spotleft, spotright },
-    body
+    frontmatter: { hero, about, spotleft, spotright }
   } = mdx
 
   return (
