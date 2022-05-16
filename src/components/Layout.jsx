@@ -8,7 +8,6 @@ import { useSiteMetadata } from '../workers'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
-  console.log('layout component')
   return (
     <>
       <Helmet>
