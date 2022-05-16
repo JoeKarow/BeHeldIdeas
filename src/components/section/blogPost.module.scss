@@ -143,8 +143,13 @@
   border-style: solid;
   opacity: 1;
   position: absolute;
+  @apply prose prose-stone;
 }
 .header {
+  h2 {
+    @apply text-4xl text-center;
+  }
+
   p {
     color: _palette(fg-bold);
     position: relative;

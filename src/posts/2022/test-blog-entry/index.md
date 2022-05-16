@@ -1,19 +1,21 @@
 ---
-coverImage:
-  image: developers.gif
-  imageAlt: developers!
 templateKey: blog-page
+generate: true
+title: test blog entry
+coverImage:
+  image: narrow-image.jpeg
+  imageAlt: developers!
+description: whatever2
 author: you2
 date: 2022-04-19T18:52:29.530Z
 image-alt: boom
-title: test blog entry
 tags:
   - potato
   - dog
   - one
 image: img/developers.gif
-description: whatever2
 ---
+
 ## Oh hi
 
 ![spider](spider2.jpeg)

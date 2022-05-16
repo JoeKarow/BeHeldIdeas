@@ -14,6 +14,7 @@ const { author } = siteMetadata
 
 const blogEditFiends = [
   hiddenField('Template Key', 'templateKey', 'blog-page'),
+  hiddenField('Generator', 'generate', 'true'),
   stringField('Post Title', 'title', true),
   objectField(
     'Cover Image',

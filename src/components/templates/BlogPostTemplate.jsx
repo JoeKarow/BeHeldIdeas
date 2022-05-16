@@ -1,7 +1,8 @@
 import React from 'react'
+import { BlogPost } from '../'
 
-const BlogPostTemplate = () => {
-  return <div></div>
+const BlogPostTemplate = ({ data }) => {
+  return <BlogPost data={data} />
 }
 
 export default BlogPostTemplate
