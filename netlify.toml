@@ -1,6 +1,6 @@
 # example netlify.toml
 [build]
-  command = "npx pnpm install --no-frozen-lockfile && gatsby build"
+  command = "npx pnpm install && gatsby build"
   functions = "netlify/functions"
   publish = "public"
 
