@@ -87,8 +87,8 @@
   },
   "devDependencies": {
     "ajv": "^8.8.2",
-    "pnpm": "^7.0.0",
+    "pnpm": "^7.1.0",
     "vscode-generate-index-standalone": "^1.6.0"
   },
-  "packageManager": "pnpm@7.0.0"
+  "packageManager": "pnpm@7.1.0"
 }
