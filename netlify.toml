@@ -6,7 +6,7 @@
   publish = "public"
 
 [build.environment]
-  NPM_FLAGS="--prefix=/dev/null"
+  NPM_FLAGS="--version"
   NODE_VERSION="v14"
 
 # [[plugins]]
