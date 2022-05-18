@@ -9,15 +9,18 @@ const BlogPost = ({ data }) => {
     image: getImage(mdx.frontmatter.coverImage.image),
     alt: mdx.frontmatter.coverImage.imageAlt
   }
-  console.log(imageData)
   return (
     <section id="main" className={styles.wrapper}>
       <div className={styles.container}>
         <div className={[styles.major, styles.header]}>
-          <h2>{mdx.frontmatter.title}</h2>
+          <h1 className="mx-auto text-3xl w-fit">{mdx.frontmatter.title}</h1>
         </div>
         <article>
-          <GatsbyImage image={imageData.image} alt={imageData.alt} />
+          <GatsbyImage
+            image={imageData.image}
+            alt={imageData.alt}
+            className="my-5"
+          />
 
           <MDXRenderer className={styles.content}>{mdx.body}</MDXRenderer>
         </article>
