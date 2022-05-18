@@ -21,7 +21,7 @@ export const query = graphql`
         coverImage {
           image {
             childImageSharp {
-              gatsbyImageData(aspectRatio: 1.777778)
+              gatsbyImageData(aspectRatio: 3)
             }
           }
           imageAlt
