@@ -1963,7 +1963,7 @@ body.is-touch {
 
   .spotlight {
     background-attachment: scroll;
-    height: auto;
+    min-height: 100vh;
 
     .image.main {
       display: block;
