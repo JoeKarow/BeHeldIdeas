@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import * as styles from './navbar.module.scss'
 
 const Navbar = () => {
   const { settingsJson, navigationJson } = useStaticQuery(graphql`
@@ -17,7 +18,7 @@ const Navbar = () => {
       }
     }
   `)
-  const li = navigationJson.items.map(navitem => {
+  const li = navigationJson.items.map((navitem) => {
     return (
       <li key={navitem.text}>
         <Link to={navitem.url}>{navitem.text}</Link>
@@ -26,7 +27,7 @@ const Navbar = () => {
   })
   const { title } = settingsJson.siteMetadata
   return (
-    <header id="header">
+    <header className={styles.header}>
       <h1 id="logo">
         <Link to="/">{title}</Link>
       </h1>
