@@ -9,7 +9,7 @@
   ],
   "prettier": "prettier-config-standard",
   "scripts": {
-    "prebuild": "test \"$CI\" = true && npx pnpm install --no-frozen-lockfile || echo skiping pnpm install",
+    "prebuild": "test \"$CI\" = true && npx pnpm install --no-frozen-lockfile || echo skipping pnpm install",
     "develop": "NODE_ENV=development gatsby clean && gatsby develop --inspect",
     "start": "npm-run-all --parallel develop netlifyproxy indexGenerator",
     "build": "gatsby build",
