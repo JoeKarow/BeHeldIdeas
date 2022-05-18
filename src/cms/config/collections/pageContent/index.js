@@ -1,18 +1,11 @@
-import {
-  dateField,
-  imageField,
-  mdEditor,
-  objectField,
-  relationSelection,
-  stringField
-} from '../../fields'
 import { collectionDefaults } from '../../patterns'
+import { mainPage } from './mainPage'
+import { resumeTimeline } from './resumeTimeline'
 
 const pageContentCollection = {
-  ...collectionDefaults('Page Content', 'pagecontent'),
-  folder: 'src/',
-  path: 'src/',
-  fields: [stringField('placeholder', 'placeholder')]
+  ...collectionDefaults('Page Content', 'pagecontent', true),
+  extension: 'mdx',
+  format: 'frontmatter',
+  files: [mainPage, resumeTimeline]
 }
-
 export default pageContentCollection

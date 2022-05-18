@@ -1,0 +1,9 @@
+{
+    "extensions": {
+        "endpoints": {
+            "Gatsby Local": {
+                "url": "http://localhost:8000/___graphql"
+            }
+        }
+    }
+}

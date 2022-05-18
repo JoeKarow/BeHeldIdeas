@@ -1,3 +1,4 @@
+const path = require('path')
 const cmsJsonSettings = require('./src/data/settings/settings.json')
 
 const { siteMetadata } = cmsJsonSettings
@@ -24,6 +25,15 @@ const sourceFilesystemList = [
     },
     __key: 'pages'
   },
+  //posts
+  // {
+  //   resolve: 'gatsby-source-filesystem',
+  //   options: {
+  //     name: 'posts',
+  //     path: `${__dirname}/src/posts`
+  //   },
+  //   __key: 'posts'
+  // },
   // cms data files
   {
     resolve: 'gatsby-source-filesystem',
@@ -33,6 +43,7 @@ const sourceFilesystemList = [
     },
     __key: 'jsonData'
   },
+  // images
   {
     resolve: 'gatsby-source-filesystem',
     options: {
@@ -41,6 +52,16 @@ const sourceFilesystemList = [
     },
     __key: 'srcImages'
   }
+  // {
+  //   resolve: `gatsby-graphql-sharp`,
+  //   options: {
+  //     image_url_fields: [
+  //       //your graphql schema hierarchy
+  //       'mdx.frontmatter.about.imgURL',
+  //       'mdx.frontmatter.hero.imgURL'
+  //     ]
+  //   }
+  // }
 ]
 const pluginImageSharp = {
   resolve: 'gatsby-plugin-sharp',
@@ -49,15 +70,16 @@ const pluginImageSharp = {
       formats: ['auto', 'webp'],
       placeholder: 'blurred',
       quality: 50,
-      breakpoints: [750, 1080, 1366, 1920],
-      backgroundColor: 'transparent',
-      tracedSVGOptions: {},
-      blurredOptions: {},
-      jpgOptions: {},
-      pngOptions: {},
-      webpOptions: {},
-      avifOptions: {}
-    }
+      // breakpoints: [750, 1080, 1366, 1920],
+      backgroundColor: 'transparent'
+      // tracedSVGOptions: {},
+      // blurredOptions: {},
+      // jpgOptions: {},
+      // pngOptions: {},
+      // webpOptions: {},
+      // avifOptions: {}
+    },
+    stripMetadata: true
   }
 }
 const pluginMdx = {
@@ -66,8 +88,15 @@ const pluginMdx = {
     extensions: ['.mdx', '.md'],
     gatsbyRemarkPlugins: [
       {
+        resolve: 'gatsby-remark-copy-linked-files',
+        options: {
+          destinationDir: 'uploads'
+        }
+      },
+      {
         resolve: 'gatsby-remark-relative-images',
         options: {
+          staticFolderName: 'static/img',
           name: 'uploads'
         }
       },
@@ -81,17 +110,12 @@ const pluginMdx = {
         }
       },
       {
-        resolve: 'gatsby-remark-copy-linked-files',
-        options: {
-          destinationDir: 'static'
-        }
-      },
-      {
         resolve: 'gatsby-remark-external-links'
       }
     ]
   }
 }
+
 const pluginNetlifyCMS = {
   resolve: 'gatsby-plugin-netlify-cms',
   options: {
@@ -111,19 +135,57 @@ const pluginCSS = {
   }
 }
 
+const webpackAnalyze = {
+  resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+  options: {
+    devMode: true
+  }
+}
+
+const pluginPnpm = {
+  resolve: 'gatsby-plugin-pnpm',
+  options: {
+    include: [
+      'mini-css-extract-plugin'
+      //   'prop-types',
+      //   'query-string',
+      //   'lodash/merge',
+      //   'mitt',
+      //   '@gatsbyjs/reach-router/lib/utils',
+      //   'gatsby-link',
+      //   'gatsby-react-router-scroll'
+    ]
+    // projectPath: path.dirname(__dirname)
+  }
+}
+
+const pluginPageCreator = {
+  //fixes the issue where initial MDX builds are blank
+  resolve: 'gatsby-plugin-page-creator',
+  options: {
+    path: `${__dirname}/src/pages`,
+    ignore: [`**/*.mdx`, `**.*.md`]
+  }
+}
+
 const plugins = [
+  ...sourceFilesystemList,
   'gatsby-plugin-react-helmet',
-  'gatsby-plugin-sitemap',
   'gatsby-plugin-image',
-  'gatsby-plugin-mdx',
-  'gatsby-plugin-postcss',
-  'gatsby-transformer-json',
+  // 'gatsby-plugin-mdx',
+  // 'gatsby-plugin-postcss',
+  'gatsby-remark-images',
   'gatsby-transformer-sharp',
+  'gatsby-transformer-json',
+  'gatsby-plugin-graphql-config',
+  'gatsby-plugin-page-data-preview',
+  // 'gatsby-plugin-mdx-frontmatter',
+  pluginMdx,
   pluginImageSharp,
   pluginCSS,
   pluginNetlifyCMS,
-
-  ...sourceFilesystemList,
+  pluginPageCreator,
+  pluginPnpm,
   //keep this last
   'gatsby-plugin-netlify'
 ]

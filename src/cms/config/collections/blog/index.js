@@ -1,43 +1,53 @@
 import {
   dateField,
+  hiddenField,
   imageField,
   mdEditor,
   objectField,
-  relationSelection,
+  // relationSelection,
   stringField
 } from '../../fields'
 import { collectionDefaults } from '../../patterns'
-// import { siteMetadata } from '../../../../data/settings.json';
 import siteMetadata from '../../../../data/settings/settings.json'
 
 const { author } = siteMetadata
 
+const blogEditFiends = [
+  hiddenField('Template Key', 'templateKey', 'blog-page'),
+  hiddenField('Generator', 'generate', 'true'),
+  stringField('Post Title', 'title', true),
+  objectField(
+    'Cover Image',
+    'coverImage',
+    [
+      imageField('Cover Image', 'image', '', false, true),
+      stringField('Alt Text', 'imageAlt', true)
+    ],
+    true,
+    false
+  ),
+  stringField('Short Description', 'description', true),
+  stringField('Author', 'author', true, author),
+  dateField('Publish Date', 'date', true),
+  // relationSelection(
+  //   'Tag(s)',
+  //   'tags',
+  //   'settings',
+  //   'blogtags',
+  //   'tagname',
+  //   true
+  // ),
+  mdEditor('Body', 'body')
+]
+
 const blogCollection = {
-  ...collectionDefaults('Blog', 'blog'),
-  folder: 'src/posts',
+  ...collectionDefaults('Blog', 'blog', true),
+  folder: 'src/pages/blog/posts',
   path: '{{year}}/{{slug}}/index',
-  media_folder: 'img/',
-  public_folder: 'img/',
+  media_folder: '',
+  public_folder: '',
   create: true,
-  fields: [
-    stringField('Post Title', 'title', true),
-    objectField('Cover Image', 'coverImage', [
-      imageField('Cover Image', 'image', false, true),
-      stringField('Alt Text', 'image-alt', true)
-    ]),
-    stringField('Short Description', 'description', true),
-    stringField('Author', 'author', true, author),
-    dateField('Publish Date', 'date', true),
-    // relationSelection(
-    //   'Tag(s)',
-    //   'tags',
-    //   'settings',
-    //   'blogtags',
-    //   'tagname',
-    //   true
-    // ),
-    mdEditor('Body', 'body', false)
-  ]
+  fields: [...blogEditFiends]
 }
 
 export default blogCollection

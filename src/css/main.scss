@@ -12,6 +12,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+// Custom
 
 // Breakpoints.
 
@@ -19,24 +20,24 @@
   (
     xlarge: (
       1281px,
-      1680px,
+      1680px
     ),
     large: (
       981px,
-      1280px,
+      1280px
     ),
     medium: (
       737px,
-      980px,
+      980px
     ),
     small: (
       481px,
-      736px,
+      736px
     ),
     xsmall: (
       null,
-      480px,
-    ),
+      480px
+    )
   )
 );
 
@@ -928,7 +929,8 @@ input[type='radio'] {
     z-index: 1;
   }
 
-  img {
+  img,
+  picture {
     border-radius: _size(border-radius);
     display: block;
   }
@@ -959,7 +961,8 @@ input[type='radio'] {
     margin: 0 0 _size(element-margin) 0;
     width: 100%;
 
-    img {
+    img,
+    picture {
       width: 100%;
     }
   }
@@ -1329,14 +1332,14 @@ input[type='button'],
 
   // Force spotlights to stack in reverse order (needed for our box
   // shadows to overlap stuff in the right direction).
-  @for $i from 1 through _misc(max-spotlight) {
-    &:nth-last-of-type(#{$i}) {
-      z-index: #{$i};
-    }
-  }
+  // @for $i from 1 through _misc(max-spotlight) {
+  //   &:nth-last-of-type(#{$i}) {
+  //     z-index: #{$i};
+  //   }
+  // }
 
   &:before {
-    background-image: url('images/overlay.png');
+    // background-image: url('images/overlay.png');
     content: '';
     display: block;
     height: 100%;
@@ -1348,7 +1351,9 @@ input[type='button'],
   .image.main {
     display: none;
 
-    img {
+    img,
+    picture,
+    source {
       position: relative;
     }
   }
@@ -1796,7 +1801,8 @@ body.landing {
       vertical-align: middle;
       width: 18em;
 
-      img {
+      img,
+      picture {
         border-radius: 100%;
         display: block;
         width: 100%;
@@ -1957,7 +1963,7 @@ body.is-touch {
 
   .spotlight {
     background-attachment: scroll;
-    height: auto;
+    min-height: 100vh;
 
     .image.main {
       display: block;

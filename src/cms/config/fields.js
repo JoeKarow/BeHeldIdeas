@@ -24,18 +24,21 @@ export const objectField = (
   label = 'Object',
   name = 'object',
   fields = [],
-  required = true
+  required = true,
+  collapsed = true
 ) => ({
   label,
   name,
   widget: 'object',
   fields,
-  required
+  required,
+  collapsed
 })
 
 export const imageField = (
   label = 'image',
   name = 'image',
+  media_folder = '',
   choose_url = false,
   required = true
 ) => ({
@@ -43,6 +46,7 @@ export const imageField = (
   name,
   widget: 'image',
   choose_url,
+  media_folder,
   required
 })
 
@@ -53,35 +57,66 @@ export const dateField = (label = 'date', name = 'date', required = true) => ({
   required
 })
 
-const mdButtons = [
-  'bold',
-  'italic',
-  'code',
-  'link',
-  'heading-one',
-  'heading-two',
-  'heading-three',
-  'heading-four',
-  'heading-five',
-  'heading-six',
-  'quote',
-  'bulleted-list',
-  'numbered-list'
-]
+// const mdButtons = [
+//   'bold',
+//   'italic',
+//   'code',
+//   'link',
+//   'heading-one',
+//   'heading-two',
+//   'heading-three',
+//   'heading-four',
+//   'heading-five',
+//   'heading-six',
+//   'quote',
+//   'bulleted-list',
+//   'numbered-list'
+// ]
+export const mdButtons = {
+  all: [
+    'bold',
+    'italic',
+    'code',
+    'link',
+    'heading-one',
+    'heading-two',
+    'heading-three',
+    'heading-four',
+    'heading-five',
+    'heading-six',
+    'quote',
+    'bulleted-list',
+    'numbered-list'
+  ],
+  para: ['bold', 'italic', 'link'],
+  noH1: [
+    'bold',
+    'italic',
+    'code',
+    'link',
+    'heading-two',
+    'heading-three',
+    'heading-four',
+    'heading-five',
+    'heading-six',
+    'quote',
+    'bulleted-list',
+    'numbered-list'
+  ]
+}
 
 export const mdEditor = (
   label = 'body',
   name = 'body',
-  h1Allowed = false,
+  buttons = mdButtons.all,
   editor_components = []
 ) => ({
   label,
   name,
-  buttons: h1Allowed
-    ? mdButtons
-    : mdButtons.filter(opt => opt !== 'heading-one'),
+  // buttons,
   editor_components,
-  required: true
+  required: true,
+  widget: 'markdown'
 })
 
 export const relationSelection = (
@@ -131,7 +166,28 @@ export const boolSelect = (
   default: defaultVal
 })
 
-export const hiddenField = (name = 'hidden') => ({
+export const hiddenField = (
+  label = 'hidden',
+  name = 'hidden',
+  defaultVal = ''
+) => ({
+  label,
   name,
-  widget: 'hidden'
+  widget: 'hidden',
+  default: defaultVal
+})
+
+export const colorPicker = (
+  label = 'color',
+  name = 'color',
+  defaultColor = '',
+  allowInput = false,
+  enableAlpha = false
+) => ({
+  label,
+  name,
+  default: defaultColor,
+  allowInput,
+  enableAlpha,
+  widget: 'color'
 })
