@@ -1,6 +1,10 @@
 @import '../../css/libs/index.scss';
 
 .spotlight {
+  border: 5px red solid;
+}
+
+.spotlight {
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -8,9 +12,17 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
+  min-height: 100vh;
+  @include breakpoint('<=medium') {
+    background-attachment: scroll;
+    height: auto;
+  }
+  @include breakpoint('<=small') {
+    box-shadow: 0 0.125em 0.5em 0 rgba(0, 0, 0, 0.25);
+  }
 
   &:before {
-    // background-image: url('images/overlay.png');
+    background-image: url('../../css/images/overlay.png');
     content: '';
     display: block;
     height: 100%;
@@ -27,6 +39,18 @@
     source {
       position: relative;
     }
+    @include breakpoint('<=medium') {
+      display: block;
+      margin: 0;
+      max-height: 40vh;
+      overflow: hidden;
+    }
+    @include breakpoint('<=small') {
+      max-height: 60vh;
+    }
+    @include breakpoint('<=xsmall') {
+      max-height: 50vh;
+    }
   }
 
   .content {
@@ -38,7 +62,7 @@
     position: absolute;
   }
 
-  .goto-next {
+  .gotoNext {
     @include vendor('transform', 'translate(0,0)');
     @include vendor('transition', 'transform 0.75s ease, opacity 1s ease-in');
     @include vendor('transition-delay', '0.5s');
@@ -116,7 +140,7 @@
       opacity: 0;
     }
 
-    .goto-next {
+    .gotoNext {
       @include vendor('transform', 'translate(0,1.5em)');
       opacity: 0;
     }
@@ -202,5 +226,25 @@ article {
 .footer {
   &.major {
     margin: (_size(element-margin) * 2) 0 0 0;
+  }
+}
+
+.image {
+  border-radius: _size(border-radius);
+  border: 0;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url('../../css/images/overlay.png');
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
 }

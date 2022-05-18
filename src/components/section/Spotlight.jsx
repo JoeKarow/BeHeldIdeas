@@ -9,7 +9,7 @@ const Spotlight = ({
   thisSectionId,
   nextSectionId,
   coverImage,
-  imgAlt,
+  coverImageAlt,
   heading,
   subheading,
   body,
@@ -17,14 +17,20 @@ const Spotlight = ({
 }) => {
   const image = getImage(coverImage)
   return (
-    <section id={thisSectionId} className="">
+    <section id={thisSectionId}>
       <ParallaxBanner
         className={`spotlight style1 ${layout}`}
         layers={[
           {
             speed: -20,
             easing: 'ease',
-            children: <GatsbyImage image={image} alt={imgAlt} />
+            children: (
+              <GatsbyImage
+                image={image}
+                alt={coverImageAlt}
+                className="w-auto min-h-screen"
+              />
+            )
           },
           {
             speed: 0,
@@ -33,6 +39,7 @@ const Spotlight = ({
               <SpotlightContent
                 content={{ heading, subheading, body }}
                 layout={layout}
+                className={`content ${layout}`}
               />
             )
           },
