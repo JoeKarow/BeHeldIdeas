@@ -30,7 +30,7 @@
 .left,
 .right {
   .content {
-    @apply flex flex-col;
+    @apply lg:flex lg:flex-col;
     height: 101%;
     padding: $size-wrapper-pad-tb $size-wrapper-pad-lr;
     top: 0;
@@ -41,14 +41,14 @@
   }
 }
 .body {
-  @apply prose-neutral;
+  // @apply ;
 }
 .headings {
   h2 {
-    @apply text-4xl;
+    @apply text-xl lg:text-4xl;
   }
   h3 {
-    @apply text-2xl leading-loose;
+    @apply text-lg lg:text-2xl leading-loose;
   }
 }
 
@@ -112,5 +112,49 @@
     .content {
       @include vendor('transform', 'translate(5em,0)');
     }
+  }
+}
+
+@include breakpoint('<=medium') {
+  $size-wrapper-pad-tb: 4.5em;
+  $size-wrapper-pad-lr: 2.5em;
+
+  .content {
+    background-color: _palette(bg);
+    border-width: 0 !important;
+    border-top-width: 0.35em !important;
+    padding: $size-wrapper-pad-tb $size-wrapper-pad-lr
+      ($size-wrapper-pad-tb - _size(element-margin)) $size-wrapper-pad-lr !important;
+    text-align: center;
+    width: 100% !important;
+  }
+  .right,
+  .left {
+    .content {
+      right: auto !important;
+      bottom: 0 !important;
+      left: auto !important;
+      // position: relative;
+      height: fit-content;
+      top: auto !important;
+    }
+  }
+}
+@include breakpoint('<=small') {
+  $size-wrapper-pad-tb: 3.25em;
+  $size-wrapper-pad-lr: 1.5em;
+
+  .content {
+    border-top-width: 0.2em !important;
+    padding: $size-wrapper-pad-tb $size-wrapper-pad-lr
+      ($size-wrapper-pad-tb - _size(element-margin)) $size-wrapper-pad-lr !important;
+  }
+}
+@include breakpoint('<=xsmall') {
+  $size-wrapper-pad-tb: 3em;
+  $size-wrapper-pad-lr: 1.25em;
+  .content {
+    padding: $size-wrapper-pad-tb $size-wrapper-pad-lr
+      ($size-wrapper-pad-tb - _size(element-margin)) $size-wrapper-pad-lr !important;
   }
 }

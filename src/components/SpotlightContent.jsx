@@ -6,7 +6,7 @@ const SpotlightContent = ({ content, layout }) => {
   // 'content flex flex-col'
   return (
     <div className={styles[layout]}>
-      <div className={[styles.content].join(' ')}>
+      <div className={styles.content}>
         <div className={styles.headings}>
           <h2>{content.heading}</h2>
           <h3>{content.subheading}</h3>
