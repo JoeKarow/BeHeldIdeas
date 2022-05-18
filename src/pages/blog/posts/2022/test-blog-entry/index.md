@@ -13,7 +13,6 @@ tags:
   - potato
   - dog
   - one
-image: img/developers.gif
 ---
 
 ## Oh hi
@@ -22,6 +21,6 @@ image: img/developers.gif
 
 blah blah blah testing
 
-![](img/fpp-small-lustre-wall_texture-product-750x1000.u1.jpg)
+![hi](fpp-small-lustre-wall_texture-product-750x1000.u1.jpg)
 
 where does this image show?

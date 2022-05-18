@@ -42,7 +42,7 @@ const blogEditFiends = [
 
 const blogCollection = {
   ...collectionDefaults('Blog', 'blog', true),
-  folder: 'src/posts',
+  folder: 'src/pages/blog/posts',
   path: '{{year}}/{{slug}}/index',
   media_folder: '',
   public_folder: '',
