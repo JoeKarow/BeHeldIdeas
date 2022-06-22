@@ -4,6 +4,7 @@
         ":preserveSemverRanges",
         ":prNotPending",
         ":automergeAll",
+        ":disableRateLimiting",
         "packages:gatsby"
     ],
     "reviewersFromCodeOwners": true,
