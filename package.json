@@ -90,5 +90,5 @@
     "pnpm": "^7.1.0",
     "vscode-generate-index-standalone": "^1.6.0"
   },
-  "packageManager": "pnpm@7.1.0"
+  "packageManager": "pnpm@7.3.0"
 }
