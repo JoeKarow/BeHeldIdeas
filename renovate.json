@@ -7,6 +7,9 @@
         ":disableRateLimiting",
         "packages:gatsby"
     ],
+    "addLabels": [
+        "dependencies"
+        ],
     "reviewersFromCodeOwners": true,
     "assigneesFromCodeOwners": true,
     "semanticCommits": "enabled",
