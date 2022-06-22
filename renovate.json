@@ -1,8 +1,13 @@
 {
-  "extends": [
-    "config:base",
-    ":preserveSemverRanges"
-  ],
-  "reviewersFromCodeOwners": true,
-  "semanticCommits": "enabled"
+    "extends": [
+        "config:base",
+        ":preserveSemverRanges",
+        ":prNotPending",
+        ":automergeAll",
+        "packages:gatsby"
+    ],
+    "reviewersFromCodeOwners": true,
+    "asigneesFromCodeOwners": true,
+    "semanticCommits": "enabled",
+    "assignAutomerge": true
 }
