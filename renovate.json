@@ -1,0 +1,17 @@
+{
+    "extends": [
+        "config:base",
+        ":preserveSemverRanges",
+        ":prNotPending",
+        ":automergeAll",
+        ":disableRateLimiting",
+        "packages:gatsby"
+    ],
+    "addLabels": [
+        "dependencies"
+        ],
+    "reviewersFromCodeOwners": true,
+    "assigneesFromCodeOwners": true,
+    "semanticCommits": "enabled",
+    "assignAutomerge": true
+}
