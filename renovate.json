@@ -7,7 +7,7 @@
         "packages:gatsby"
     ],
     "reviewersFromCodeOwners": true,
-    "asigneesFromCodeOwners": true,
+    "assigneesFromCodeOwners": true,
     "semanticCommits": "enabled",
     "assignAutomerge": true
 }
