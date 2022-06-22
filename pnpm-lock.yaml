@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@apollo/client': ~3.6.0
+  '@apollo/client': ~3.2.5 || ~3.3.0
   '@babel/core': '>=7.12.3 <8.0.0'
   '@iconify/iconify': ^2.2.1
   '@iconify/react': ^3.2.2
@@ -73,7 +73,7 @@ specifiers:
 
 dependencies:
   '@apollo/client': 3.6.4_77h5kg6422vos5a7c32osaaxh4
-  '@babel/core': 7.18.2
+  '@babel/core': 7.17.12
   '@iconify/iconify': 2.2.1
   '@iconify/react': 3.2.2_react@17.0.2
   '@mdx-js/mdx': 1.6.22
@@ -3675,15 +3675,28 @@ packages:
       - '@parcel/core'
     dev: false
 
-  /@parcel/utils/2.6.0:
-    resolution: {integrity: sha512-ElXz+QHtT1JQIucbQJBk7SzAGoOlBp4yodEQVvTKS7GA+hEGrSP/cmibl6qm29Rjtd0zgQsdd+2XmP3xvP2gQQ==}
+  /@parcel/utils/2.3.1:
+    resolution: {integrity: sha512-OFdh/HuAcce753/U3QoORzYU3N5oZqCfQNRb0i3onuz/qpli5TyxUl/k1BuTqlKYr6Px3kj05g6GFi9kRBOMbw==}
     engines: {node: '>= 12.0.0'}
     dependencies:
-      '@parcel/codeframe': 2.6.0
-      '@parcel/diagnostic': 2.6.0
-      '@parcel/hash': 2.6.0
-      '@parcel/logger': 2.6.0
-      '@parcel/markdown-ansi': 2.6.0
+      '@parcel/codeframe': 2.3.1
+      '@parcel/diagnostic': 2.3.1
+      '@parcel/hash': 2.3.1
+      '@parcel/logger': 2.3.1
+      '@parcel/markdown-ansi': 2.3.1
+      '@parcel/source-map': 2.0.2
+      chalk: 4.1.2
+    dev: false
+
+  /@parcel/utils/2.5.0:
+    resolution: {integrity: sha512-kaLGXtQuOOH55KZqXdYDvczhh3mk2eeTVqrrXuuihGjbLKYFlUW2tFDm+5r2s9nCPwTQxOO43ZEOCKSnia+e4w==}
+    engines: {node: '>= 12.0.0'}
+    dependencies:
+      '@parcel/codeframe': 2.5.0
+      '@parcel/diagnostic': 2.5.0
+      '@parcel/hash': 2.5.0
+      '@parcel/logger': 2.5.0
+      '@parcel/markdown-ansi': 2.5.0
       '@parcel/source-map': 2.0.2
       chalk: 4.1.2
     dev: false
@@ -4303,7 +4316,7 @@ packages:
       '@typescript-eslint/typescript-estree': 4.33.0_typescript@4.7.3
       debug: 4.3.4
       eslint: 7.32.0
-      typescript: 4.7.3
+      typescript: 4.6.4
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -7451,7 +7464,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 4.33.0_hcfsmds2fshutdssjqluwm76uu
+      '@typescript-eslint/parser': 4.33.0_e4zyhrvfnqudwdx5bevnvkluy4
       debug: 3.2.7
       eslint-import-resolver-node: 0.3.6
       find-up: 2.1.0
@@ -17606,6 +17619,13 @@ packages:
     resolution: {integrity: sha512-uEtWkFM/sdZvRNNDL3Ehu4WVpwaulhwQszV8mrtcdeE8nN00BV9mAmQ88RkrBhFgl9gMgvjJLAQcZbnPXI9mlA==}
     dependencies:
       tslib: 1.14.1
+    dev: false
+
+  /ts-invariant/0.8.2:
+    resolution: {integrity: sha512-VI1ZSMW8soizP5dU8DsMbj/TncHf7bIUqavuE7FTeYeQat454HHurJ8wbfCnVWcDOMkyiBUWOW2ytew3xUxlRw==}
+    engines: {node: '>=8'}
+    dependencies:
+      tslib: 2.4.0
     dev: false
 
   /ts-node/9.1.1_typescript@4.6.4:
