@@ -2,11 +2,18 @@ node_modules/
 .cache/
 public
 .pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 .vscode
+.dccache
 # Netlify CLI Config
 .netlify/state.json
 
 # PNPM ignore package-lock
 package-lock.json
 
-workspace.code-workspace
+*.code-workspace
