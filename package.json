@@ -41,7 +41,7 @@
     "gatsby-plugin-image": "^2.16.1",
     "gatsby-plugin-mdx": "^3.16.0",
     "gatsby-plugin-mdx-frontmatter": "^0.0.4",
-    "gatsby-plugin-netlify": "^4.4.0",
+    "gatsby-plugin-netlify": "^5.0.0",
     "gatsby-plugin-netlify-cms": "^6.16.0",
     "gatsby-plugin-page-data-preview": "^1.2.1",
     "gatsby-plugin-pnpm": "^1.2.10",
