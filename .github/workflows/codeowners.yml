@@ -34,7 +34,7 @@ jobs:
       with:
         distribution: 25
         username: true
-        defaultowners: "JoeKarow"
+        defaultowners: "@JoeKarow"
     - uses: mszostok/codeowners-validator@v0.5.1
       id: validation
       if: ${{ steps.committed.outputs.changes_detected == 'true' }}
