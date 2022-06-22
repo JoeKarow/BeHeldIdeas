@@ -5,7 +5,6 @@
         ":prNotPending",
         ":automergeAll",
         ":disableRateLimiting",
-        ":disableLockFiles",
         "packages:gatsby"
     ],
     "reviewersFromCodeOwners": true,
