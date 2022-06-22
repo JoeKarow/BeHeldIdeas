@@ -28,8 +28,6 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
   } else if (image) {
     return <img src={image} alt={alt} />
     // <img style={{ imageStyle }} src={image} alt={alt} />
-
-    return null
   }
 }
 

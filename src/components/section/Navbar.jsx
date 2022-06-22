@@ -1,4 +1,6 @@
 import React from 'react'
+import { Breakpoint } from 'react-socks'
+import { slide as Menu } from 'react-burger-menu'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import * as styles from './navbar.module.scss'
 
@@ -31,6 +33,7 @@ const Navbar = () => {
       <h1 id="logo">
         <Link to="/">{title}</Link>
       </h1>
+
       <nav id="nav">
         <ul>{li}</ul>
       </nav>
