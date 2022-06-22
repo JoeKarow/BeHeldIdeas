@@ -1,8 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@apollo/client': ~3.2.5 || ~3.3.0
-  '@babel/core': ^7.18.2
+  '@apollo/client': ~3.6.0
+  '@babel/core': '>=7.12.3 <8.0.0'
   '@iconify/iconify': ^2.2.1
   '@iconify/react': ^3.2.2
   '@mdx-js/mdx': ^1.6.22
@@ -13,7 +13,7 @@ specifiers:
   '@tailwindcss/aspect-ratio': ^0.4.0
   '@tailwindcss/typography': ^0.5.2
   '@types/mdx': ^2.0.1
-  '@types/react': '>=16.3.0 <17.0.0 || >=17.0.0 <18.0.0'
+  '@types/react': <19.0.0
   ajv: ^8.8.2
   autoprefixer: ^10.4.5
   babel-eslint: ^10.1.0
@@ -72,7 +72,7 @@ specifiers:
   webpack: ^5.73.0
 
 dependencies:
-  '@apollo/client': 3.3.21_77h5kg6422vos5a7c32osaaxh4
+  '@apollo/client': 3.6.4_77h5kg6422vos5a7c32osaaxh4
   '@babel/core': 7.18.2
   '@iconify/iconify': 2.2.1
   '@iconify/react': 3.2.2_react@17.0.2
@@ -152,35 +152,6 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.13
-    dev: false
-
-  /@apollo/client/3.3.21_77h5kg6422vos5a7c32osaaxh4:
-    resolution: {integrity: sha512-RAmZReFuKCKx0Rs5C0nVJwKomAHUHn+gGP/YvbEsXQWu0sXoncEUZa71UqlfCPVXa/0MkYOIbCXSQdOcuRrHgw==}
-    peerDependencies:
-      graphql: ^14.0.0 || ^15.0.0
-      react: ^16.8.0 || ^17.0.0
-      subscriptions-transport-ws: ^0.9.0
-    peerDependenciesMeta:
-      react:
-        optional: true
-      subscriptions-transport-ws:
-        optional: true
-    dependencies:
-      '@graphql-typed-document-node/core': 3.1.1_graphql@15.8.0
-      '@types/zen-observable': 0.8.3
-      '@wry/context': 0.6.1
-      '@wry/equality': 0.5.2
-      fast-json-stable-stringify: 2.1.0
-      graphql: 15.8.0
-      graphql-tag: 2.12.6_graphql@15.8.0
-      hoist-non-react-statics: 3.3.2
-      optimism: 0.16.1
-      prop-types: 15.8.1
-      react: 17.0.2
-      symbol-observable: 4.0.0
-      ts-invariant: 0.8.2
-      tslib: 1.14.1
-      zen-observable: 0.8.15
     dev: false
 
   /@apollo/client/3.6.4_77h5kg6422vos5a7c32osaaxh4:
@@ -4337,7 +4308,27 @@ packages:
       - supports-color
     dev: false
 
-  /@typescript-eslint/parser/5.24.0_ud6rd4xtew5bv4yhvkvu24pzm4:
+  /@typescript-eslint/parser/4.33.0_hcfsmds2fshutdssjqluwm76uu:
+    resolution: {integrity: sha512-ZohdsbXadjGBSK0/r+d87X0SBmKzOq4/S5nzK6SBgJspFo9/CUDJ7hjayuze+JK7CZQLDMroqytp7pOcFKTxZA==}
+    engines: {node: ^10.12.0 || >=12.0.0}
+    peerDependencies:
+      eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/scope-manager': 4.33.0
+      '@typescript-eslint/types': 4.33.0
+      '@typescript-eslint/typescript-estree': 4.33.0_typescript@4.6.4
+      debug: 4.3.4
+      eslint: 8.15.0
+      typescript: 4.6.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@typescript-eslint/parser/5.24.0_hcfsmds2fshutdssjqluwm76uu:
     resolution: {integrity: sha512-4q29C6xFYZ5B2CXqSBBdcS0lPyfM9M09DoQLtHS5kf+WbpV8pBBhHDLNhXfgyVwFnhrhYzOu7xmg02DzxeF2Uw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -7460,7 +7451,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 4.33.0_kix3shd7zvxuvkzdjm72bpp2vy
+      '@typescript-eslint/parser': 4.33.0_hcfsmds2fshutdssjqluwm76uu
       debug: 3.2.7
       eslint-import-resolver-node: 0.3.6
       find-up: 2.1.0
@@ -17617,14 +17608,7 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /ts-invariant/0.8.2:
-    resolution: {integrity: sha512-VI1ZSMW8soizP5dU8DsMbj/TncHf7bIUqavuE7FTeYeQat454HHurJ8wbfCnVWcDOMkyiBUWOW2ytew3xUxlRw==}
-    engines: {node: '>=8'}
-    dependencies:
-      tslib: 2.4.0
-    dev: false
-
-  /ts-node/9.1.1_typescript@4.7.3:
+  /ts-node/9.1.1_typescript@4.6.4:
     resolution: {integrity: sha512-hPlt7ZACERQGf03M253ytLY3dHbGNGrAq9qIHWUY9XHYl1z7wYngSr3OQ5xmui8o2AaxsONxIzjafLUiWBo1Fg==}
     engines: {node: '>=10.0.0'}
     hasBin: true

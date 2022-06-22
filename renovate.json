@@ -1,0 +1,6 @@
+{
+    "extends": ["github>JoeKarow/renovate-config"],
+      "baseBranches": [
+    "develop"
+  ]
+}

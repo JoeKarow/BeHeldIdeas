@@ -19,8 +19,8 @@
     "indexGenerator": "vscode-generate-index-standalone ./src/workers/ ./src/components/ ./utils/ --watch=true"
   },
   "dependencies": {
-    "@apollo/client": "~3.2.5 || ~3.3.0",
-    "@babel/core": "^7.18.2",
+    "@apollo/client": "~3.6.0",
+    "@babel/core": ">=7.12.3 <8.0.0",
     "@iconify/iconify": "^2.2.1",
     "@iconify/react": "^3.2.2",
     "@mdx-js/mdx": "^1.6.22",
@@ -31,7 +31,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "@types/mdx": "^2.0.1",
-    "@types/react": ">=16.3.0 <17.0.0 || >=17.0.0 <18.0.0",
+    "@types/react": "<19.0.0",
     "autoprefixer": "^10.4.5",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.17.0",
@@ -91,5 +91,5 @@
     "pnpm": "^7.1.9",
     "vscode-generate-index-standalone": "^1.6.0"
   },
-  "packageManager": "pnpm@7.1.0"
+  "packageManager": "pnpm@7.3.0"
 }
