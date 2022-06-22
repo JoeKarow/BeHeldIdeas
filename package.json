@@ -19,7 +19,7 @@
     "indexGenerator": "vscode-generate-index-standalone ./src/workers/ ./src/components/ ./utils/ --watch=true"
   },
   "dependencies": {
-    "@apollo/client": "~3.2.5 || ~3.3.0",
+    "@apollo/client": "~3.6.0",
     "@babel/core": ">=7.12.3 <8.0.0",
     "@iconify/iconify": "^2.2.1",
     "@iconify/react": "^3.2.1",
