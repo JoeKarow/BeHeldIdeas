@@ -39,7 +39,7 @@
     "gatsby-background-image": "^1.6.0",
     "gatsby-plugin-graphql-config": "^1.14.0",
     "gatsby-plugin-image": "^2.16.1",
-    "gatsby-plugin-mdx": "^3.16.0",
+    "gatsby-plugin-mdx": "^4.0.0",
     "gatsby-plugin-mdx-frontmatter": "^0.0.4",
     "gatsby-plugin-netlify": "^5.0.0",
     "gatsby-plugin-netlify-cms": "^6.16.0",
