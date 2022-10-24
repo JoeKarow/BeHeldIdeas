@@ -22,7 +22,7 @@
     "@apollo/client": "~3.7.0",
     "@babel/core": ">=7.12.3 <8.0.0",
     "@iconify/iconify": "^2.2.1",
-    "@iconify/react": "^3.2.2",
+    "@iconify/react": "^4.0.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@parcel/core": "^2.6.0",
