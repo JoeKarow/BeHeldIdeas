@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@apollo/client': ~3.7.0
   '@babel/core': '>=7.12.3 <8.0.0'
-  '@iconify/iconify': ^2.2.1
+  '@iconify/iconify': ^3.0.0
   '@iconify/react': ^3.2.2
   '@mdx-js/mdx': ^1.6.22
   '@mdx-js/react': ^1.6.22
@@ -74,7 +74,7 @@ specifiers:
 dependencies:
   '@apollo/client': 3.7.0_icdo4vrl6lcspfwvmbmur66vjy
   '@babel/core': 7.18.13
-  '@iconify/iconify': 2.2.1
+  '@iconify/iconify': 3.0.0
   '@iconify/react': 3.2.2_react@17.0.2
   '@mdx-js/mdx': 1.6.22
   '@mdx-js/react': 1.6.22_react@17.0.2
@@ -2283,8 +2283,10 @@ packages:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
     dev: false
 
-  /@iconify/iconify/2.2.1:
-    resolution: {integrity: sha512-WJzw+3iicrF/tbjbxxRinSgy5FHdJoz/egTqwi3xCDkNRJPq482RX1iyaWrjNuY2vMNSPkQMuqHvZDXgA+WnwQ==}
+  /@iconify/iconify/3.0.0:
+    resolution: {integrity: sha512-wgCSv4GwVLzwGqfUkYEDT9XOfetGZV67D5CmMYp74IdaPMnyOWb/3XxUPvGmuTt8Yw9xekMqzvdQp/p+a/abNw==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: false
 
   /@iconify/react/3.2.2_react@17.0.2:
@@ -2293,6 +2295,10 @@ packages:
       react: '>=16'
     dependencies:
       react: 17.0.2
+    dev: false
+
+  /@iconify/types/2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: false
 
   /@icons/material/0.2.4_react@17.0.2:
